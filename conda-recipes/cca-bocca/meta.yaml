@@ -1,0 +1,19 @@
+package:
+  name: cca-bocca
+  version: "0.5.7"
+
+source:
+  fn: bocca-0.5.7.tar.gz
+  url: http://www.cca-forum.org/download/cca-tools/cca-tools-latest/bocca-0.5.7.tar.gz
+
+requirements:
+  build:
+    - python
+    - cca-babel
+    - cca-spec-babel
+    - ccaffeine
+  run:
+    - python
+    - cca-babel
+    - cca-spec-babel
+    - ccaffeine

@@ -1,0 +1,18 @@
+package:
+  name: cca-spec-babel
+  version: "0.8.6"
+
+source:
+  fn: cca-spec-babel-0.8.6.tar.gz
+  url: http://www.cca-forum.org/download/cca-tools/cca-tools-latest/cca-spec-babel-0.8.6.tar.gz
+
+requirements:
+  build:
+    - python
+    - cca-babel
+    - libxml2
+
+  run:
+    - python
+    - cca-babel
+    - libxml2

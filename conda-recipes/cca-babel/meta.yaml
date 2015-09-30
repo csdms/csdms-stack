@@ -1,0 +1,20 @@
+package:
+  name: cca-babel
+  version: "1.4.0"
+
+source:
+  fn: babel-1.4.0.tar.gz
+  url: http://computation.llnl.gov/casc/components/docs/babel-1.4.0.tar.gz
+
+requirements:
+  build:
+    - python
+    - numpy
+    - libxml2
+    - chasm
+
+  run:
+    - python
+    - numpy
+    - libxml2
+    - chasm

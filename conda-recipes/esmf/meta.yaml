@@ -1,0 +1,16 @@
+package:
+  name: esmf
+  version: "6.3.0"
+
+source:
+  fn: esmf_6_3_0rp1_src.tar.gz
+  url: http://sourceforge.net/projects/esmf/files/latest/download?source=directory
+
+requirements:
+  build:
+    - libnetcdf
+    - netcdff
+
+  run:
+    - libnetcdf
+    - netcdff

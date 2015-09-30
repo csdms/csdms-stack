@@ -1,0 +1,17 @@
+package:
+  name: csdms-stack
+  version: "0.1"
+
+requirements:
+  build:
+    - csdms
+    - coupling
+    - wmtexe
+
+  run:
+    - csdms
+    - coupling
+    - wmtexe
+
+about:
+  summary: The complete CSDMS software stack.

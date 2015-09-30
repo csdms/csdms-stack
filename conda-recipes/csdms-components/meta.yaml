@@ -1,0 +1,29 @@
+package:
+  name: csdms
+  version: "0.1"
+
+requirements:
+  build:
+    - cmake
+    - python
+    - setuptools
+    - cca-babel
+    - cca-spec-babel
+    - ccaffeine
+    - cca-bocca
+    - bmibabel
+    - pexpect
+
+  run:
+    - cmake
+    - python
+    - setuptools
+    - cca-babel
+    - cca-spec-babel
+    - ccaffeine
+    - cca-bocca
+    - bmibabel
+    - pexpect
+
+about:
+  summary: Babelized components ready to be used in the CSDMS framework.

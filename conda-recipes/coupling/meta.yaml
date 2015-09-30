@@ -1,0 +1,31 @@
+package:
+  name: coupling
+  version: "0.1"
+
+source:
+  git_url: https://github.com/csdms/coupling
+  git_rev: mcflugen/fix-for-new-bmi
+
+requirements:
+  build:
+    - python
+    - numpy
+    - scipy
+    - nose
+    - shapely
+    - netcdf4
+    - pyyaml
+    - esmpy
+
+  run:
+    - python
+    - numpy
+    - scipy
+    - nose
+    - shapely
+    - netcdf4
+    - pyyaml
+    - esmpy
+
+about:
+  summary: Services for coupling CSDMS model components.

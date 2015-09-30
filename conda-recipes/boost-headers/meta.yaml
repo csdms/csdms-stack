@@ -1,0 +1,7 @@
+package:
+  name: boost-headers
+  version: "1.34"
+
+source:
+  fn: boost_1_34_0.tar.gz
+  url: http://www.cca-forum.org/download/cca-tools/dependencies/boost_1_34_0.tar.gz

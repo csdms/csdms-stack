@@ -1,0 +1,34 @@
+package:
+  name: bmibabel
+  version: "0.1.0"
+
+source:
+  git_url: https://github.com/bmi-forum/bmi-babel
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - pyyaml
+    - nose
+    - cca-bocca
+
+  run:
+    - python
+    - setuptools
+    - pyyaml
+    - nose
+    - cca-bocca
+
+build:
+  entry_points:
+    - bmi-babel-make=bmibabel.cmd.make:main
+    - bmi-babel-fetch=bmibabel.cmd.bmi_babel_fetch:main
+  preserve_egg_dir: True
+
+test:
+  imports:
+    - bmibabel
+
+about:
+  summary: Generate BMI language bindings with babel.

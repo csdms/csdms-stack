@@ -1,0 +1,22 @@
+package:
+  name: esmpy
+  version: "6.3.0"
+
+source:
+  fn: esmf_6_3_0rp1_src.tar.gz
+  url: http://sourceforge.net/projects/esmf/files/latest/download?source=directory
+
+requirements:
+  build:
+    - python
+    - esmf
+    - libnetcdf
+    - netcdff
+    - numpy
+
+  run:
+    - python
+    - esmf
+    - libnetcdf
+    - netcdff
+    - numpy

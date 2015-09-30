@@ -1,0 +1,28 @@
+package:
+  name: ccaffeine
+  version: "0.8.8"
+
+source:
+  fn: ccaffeine-0.8.8.tar.gz
+  url: http://www.cca-forum.org/download/cca-tools/cca-tools-latest/ccaffeine-0.8.8.tar.gz
+  patches:
+    - cxxflags.patch
+
+requirements:
+  build:
+    - python
+    - libxml2
+    - cca-spec-babel
+    - cca-babel
+    - boost-headers
+    - readline
+    - ncurses
+
+  run:
+    - python
+    - libxml2
+    - cca-spec-babel
+    - cca-babel
+    - boost-headers
+    - readline
+    - ncurses

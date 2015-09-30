@@ -1,0 +1,11 @@
+package:
+  name: hydrotrend
+  version: "3.0"
+
+source:
+  git_url: https://github.com/mcflugen/hydrotrend
+  git_rev: add-bmi-metadata
+
+requirements:
+  build:
+    - cmake

@@ -1,0 +1,12 @@
+package:
+  name: glib
+  version: "2.45.0"
+
+source:
+  fn: glib-2.46.0.tar.xz
+  url: http://ftp.acc.umu.se/pub/gnome/sources/glib/2.46/glib-2.46.0.tar.xz
+
+requirements:
+  build:
+    - python
+    - libffi
