@@ -1,0 +1,13 @@
+package:
+  name: netcdff
+  version: "4.4.2"
+
+source:
+  fn: netcdf-fortran-4.4.2.tar.gz
+  url: http://www.gfd-dennou.org/arch/netcdf/unidata-mirror/netcdf-fortran-4.4.2.tar.gz
+
+requirements:
+  build:
+    - libnetcdf
+  run:
+    - libnetcdf
