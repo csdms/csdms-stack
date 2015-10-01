@@ -1,3 +1,0 @@
-The CSDMS Software Stack
-========================
-
