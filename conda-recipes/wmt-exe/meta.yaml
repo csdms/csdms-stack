@@ -1,0 +1,19 @@
+package:
+  name: wmtexe
+  version: "0.1"
+
+source:
+  git_url: https://github.com/csdms/wmt-exe
+  git_rev: master
+
+requirements:
+  build:
+    - python
+    - csdms-components
+
+  run:
+    - python
+    - csdms-components
+
+about:
+  summary: The Web Modeling Tool execution server.
