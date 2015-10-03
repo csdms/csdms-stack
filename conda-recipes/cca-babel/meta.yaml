@@ -5,6 +5,8 @@ package:
 source:
   fn: babel-1.4.0.tar.gz
   url: http://computation.llnl.gov/casc/components/docs/babel-1.4.0.tar.gz
+  patches: [osx]
+    - mac-inline.patch [osx]
 
 requirements:
   build:
