@@ -1,5 +1,7 @@
 #! /bin/bash
-export USER=huttone
+export CC=$($PREFIX/babel-config --query-var=CC)
+export CXX=$($PREFIX/babel-config --query-var=CXX)
+export USER=nobody
 
 echo "- https://github.com/mcflugen/sedflux,add-function-pointers" > _repos.yaml
 echo "- https://github.com/mcflugen/hydrotrend,add-bmi-metadata" >> _repos.yaml
