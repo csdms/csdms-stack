@@ -1,7 +1,12 @@
 #!/bin/bash
 
-export CC=clang
-export CXX=clang++
+export CC=$(which clang)
+export CXX=$(which clang++)
+
+if [[ -z $CC ]]; then
+  export CC=$(which gcc)
+  export CXX=$(which g++)
+fi
 
 if [ `uname` == Darwin ]; then
     export EXTRA_ARGS="--without-threads"
