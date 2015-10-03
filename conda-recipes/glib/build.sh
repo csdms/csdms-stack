@@ -1,4 +1,11 @@
 #!/bin/bash
+export CC=$(which clang)
+export CXX=$(which clang++)
+
+if [[ -z $CC ]]; then
+  export CC=$(which gcc)
+  export CXX=$(which g++)
+fi
 
 unset PYTHON
 export PKG_CONFIG_PATH=$PREFIX/lib/pkgconfig

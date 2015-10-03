@@ -1,4 +1,11 @@
 #!/bin/bash
+export CC=$(which clang)
+export CXX=$(which clang++)
+
+if [[ -z $CC ]]; then
+  export CC=$(which gcc)
+  export CXX=$(which g++)
+fi
 
 ./configure --prefix="${PREFIX}"
 make
