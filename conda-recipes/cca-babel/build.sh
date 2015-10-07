@@ -13,6 +13,7 @@ else
     export JAVAPREFIX=/usr/java/default
   else
     export JAVAPREFIX=$JAVA_HOME
+  fi
 fi
 export JAVA=$JAVAPREFIX/bin/java
 
