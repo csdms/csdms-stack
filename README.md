@@ -22,3 +22,19 @@ $ conda install ipython
 For Macs, the link to the miniconda installer is: http://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh
 
 The full archive is at: http://repo.continuum.io/miniconda/index.html
+
+To Build the Stack
+------------------
+
+Get a fresh Python installation.
+``` bash
+$ wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh
+$ bash Miniconda-latest-Linux-x86_64.sh -f -b -p <prefix>
+$ export PATH=<prefix>/bin:$PATH
+```
+
+Run the build script.
+``` bash
+$ cd conda-recipes
+$ bash ./build-stash.sh # Go for coffee.
+```
