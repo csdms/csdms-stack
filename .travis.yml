@@ -1,0 +1,16 @@
+language: python
+python:
+  - "2.7"
+
+os:
+  - linux
+
+install:
+  - wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh
+  - bash miniconda.sh -b -p $HOME/miniconda
+  - export PATH=$HOME/miniconda/bin:$PATH
+  - conda install conda-build
+
+script:
+  - cd conda-recipes
+  - bash ./build-stack.sh
