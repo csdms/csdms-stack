@@ -8,11 +8,13 @@ fi
 
 if [ $(uname) == Darwin ]; then
   export JAVAPREFIX=$(/usr/libexec/java_home)
-  export JAVA=$JAVAPREFIX/bin/java
 else
-  export JAVA=/usr/java/default/bin/java
-  export JAVAPREFIX=/usr/java/default
+  if [[ -z $JAVA_HOME ]]; then
+    export JAVAPREFIX=/usr/java/default
+  else
+    export JAVAPREFIX=$JAVA_HOME
 fi
+export JAVA=$JAVAPREFIX/bin/java
 
 export FC=$(which gfortran)
 export F77=$(which gfortran)
