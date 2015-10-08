@@ -14,14 +14,12 @@ build:
 
 requirements:
   build:
-    - gcc
     - python
     - numpy
     - libxml2
     - chasm
 
   run:
-    - gcc
     - python
     - numpy
     - libxml2
