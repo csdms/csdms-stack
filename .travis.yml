@@ -15,8 +15,11 @@ install:
   - bash miniconda.sh -f -b -p $HOME/miniconda
   - export PATH=$HOME/miniconda/bin:$PATH
   - conda config --set always_yes yes --set changeps1 no
-  - conda install gcc
   - conda install conda-build
+  - echo $(which gcc)
+  - echo $(which gfortran)
+  - echo $(gcc --version)
+  - echo $(gfortran --version)
 
 script:
   - cd conda-recipes
