@@ -1,10 +1,11 @@
 #! /bin/bash
 
 #conda build gettext
-conda build libffi && \
+#conda build glib && \
+#conda build libffi && \
+#conda build netcdff && \
+
 conda build libxml2 && \
-conda build glib && \
-conda build netcdff && \
 conda build boost-headers && \
 conda build chasm && \
 conda build cca-babel && \
