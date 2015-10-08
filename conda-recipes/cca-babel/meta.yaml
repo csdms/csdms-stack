@@ -8,10 +8,11 @@ source:
   patches: [osx]
     - mac-inline.patch [osx]
 
-requirements:
+build:
   script_env:
     - JAVA_HOME
 
+requirements:
   build:
     - gcc
     - python
