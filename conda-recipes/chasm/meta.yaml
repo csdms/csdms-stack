@@ -5,3 +5,10 @@ package:
 source:
   fn: chasm_1.4.RC3.tar.gz
   url: http://sourceforge.net/projects/chasm-interop/files/chasm_1.4.RC3.tar.gz
+
+requirements:
+  build:
+    - gcc
+
+  run:
+    - gcc
