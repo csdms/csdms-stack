@@ -9,6 +9,9 @@ source:
     - mac-inline.patch [osx]
 
 requirements:
+  script_env:
+    - JAVA_HOME
+
   build:
     - python
     - numpy
