@@ -1,0 +1,11 @@
+--- bin/babel.in	2015-10-08 15:45:22.000000000 -0600
++++ bin/babel.in	2015-10-08 15:45:39.000000000 -0600
+@@ -63,7 +63,7 @@
+ verbose=false;
+ quiet=true;
+ default_repo=true;
+-override_installpath=false;
++override_installpath=true;
+ for a in $@; do
+   case "$a" in
+     --debug) debug=true; a=;;
