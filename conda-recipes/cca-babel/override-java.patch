@@ -1,5 +1,5 @@
---- bin/babel.in	2015-10-08 15:45:22.000000000 -0600
-+++ bin/babel.in	2015-10-08 15:45:39.000000000 -0600
+--- a/bin/babel.in	2015-10-08 16:40:45.589257136 -0600
++++ b/bin/babel.in	2015-10-08 16:42:10.354254323 -0600
 @@ -63,7 +63,7 @@
  verbose=false;
  quiet=true;
@@ -9,3 +9,14 @@
  for a in $@; do
    case "$a" in
      --debug) debug=true; a=;;
+@@ -94,7 +94,9 @@
+       echo "         Babel will use what it was configured for,"
+       echo "         You can override with the --override-installpath option"
+     else
+-      THIS_JAVA="$JAVA"
++      echo "warning: Babel configured for ${JAVA},"
++      echo "         Instead, babel will use $my_java."
++      THIS_JAVA="$my_java"
+     fi;
+   fi;
+ fi; 
