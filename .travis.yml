@@ -23,4 +23,19 @@ install:
 
 script:
   - cd conda-recipes
-  - bash ./build-stack.sh
+  - conda build libffi > build.log || (tail -500 build.log && exit 1)
+  - conda build glib > build.log || (tail -500 build.log && exit 1)
+  - conda build netcdff > build.log || (tail -500 build.log && exit 1)
+  - conda build libxml2 > build.log || (tail -500 build.log && exit 1)
+  - conda build boost-headers > build.log || (tail -500 build.log && exit 1)
+  - conda build chasm > build.log || (tail -500 build.log && exit 1)
+  - conda build cca-babel > build.log || (tail -500 build.log && exit 1)
+  - conda build cca-spec-babel > build.log || (tail -500 build.log && exit 1)
+  - conda build ccaffeine > build.log || (tail -500 build.log && exit 1)
+  - conda build cca-bocca > build.log || (tail -500 build.log && exit 1)
+  - conda build bmi-babel > build.log || (tail -500 build.log && exit 1)
+  - conda build csdms-components > build.log || (tail -500 build.log && exit 1)
+  - conda build esmf > build.log || (tail -500 build.log && exit 1)
+  - conda build esmpy > build.log || (tail -500 build.log && exit 1)
+  - conda build coupling > build.log || (tail -500 build.log && exit 1)
+  - conda build wmt-exe > build.log || (tail -500 build.log && exit 1)
