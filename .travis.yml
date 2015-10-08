@@ -11,7 +11,7 @@ env:
   - TEST_RECIPE=glib
   - TEST_RECIPE=netcdff
   - TEST_RECIPE=libxml2
-  - TEST_RECIPE=boost-header
+  - TEST_RECIPE=boost-headers
   - TEST_RECIPE=chasm
   - TEST_RECIPE=cca-babel
   - TEST_RECIPE=cca-spec-babel
