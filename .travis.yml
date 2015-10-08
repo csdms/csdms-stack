@@ -34,8 +34,9 @@ install:
   - export PATH=$HOME/miniconda/bin:$PATH
   - conda config --set always_yes yes --set changeps1 no
   - conda install conda-build
-  - echo $(which gcc)
-  - echo $(which gfortran)
+  - echo cc = $(which gcc)
+  - echo fc = $(which gfortran)
+  - echo java = $(which java)
   - echo $(gcc --version)
   - echo $(gfortran --version)
 
