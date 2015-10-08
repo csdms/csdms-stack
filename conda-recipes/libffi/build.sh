@@ -1,6 +1,6 @@
 #!/bin/bash
-export CC=$(which clang)
-export CXX=$(which clang++)
+#export CC=$(which clang)
+#export CXX=$(which clang++)
 
 if [[ -z $CC ]]; then
   export CC=$(which gcc)
