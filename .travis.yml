@@ -6,6 +6,22 @@ jdk:
 os:
   - linux
 
+env:
+  - TEST_RECIPE=libffi
+  - TEST_RECIPE=glib
+  - TEST_RECIPE=netcdff
+  - TEST_RECIPE=libxml2
+  - TEST_RECIPE=boost-headers
+  - TEST_RECIPE=chasm
+  - TEST_RECIPE="cca-babel cca-spec-babel ccaffeine"
+  - TEST_RECIPE=cca-bocca
+  - TEST_RECIPE=bmi-babel
+  - TEST_RECIPE=csdms-components
+  - TEST_RECIPE=esmf
+  - TEST_RECIPE=esmpy
+  - TEST_RECIPE=coupling
+  - TEST_RECIPE=wmt-exe
+
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install -y gfortran
@@ -16,11 +32,12 @@ install:
   - export PATH=$HOME/miniconda/bin:$PATH
   - conda config --set always_yes yes --set changeps1 no
   - conda install conda-build
-  - echo $(which gcc)
-  - echo $(which gfortran)
+  - echo cc = $(which gcc)
+  - echo fc = $(which gfortran)
+  - echo java = $(which java)
   - echo $(gcc --version)
   - echo $(gfortran --version)
 
 script:
   - cd conda-recipes
-  - bash ./build-stack.sh
+  - conda build $TEST_RECIPE -c https://conda.anaconda.org/mcflugen
