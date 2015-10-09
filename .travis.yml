@@ -13,7 +13,9 @@ env:
   - TEST_RECIPE=libxml2
   - TEST_RECIPE=boost-headers
   - TEST_RECIPE=chasm
-  - TEST_RECIPE="cca-babel cca-spec-babel ccaffeine"
+  - TEST_RECIPE=cca-babel
+  - TEST_RECIPE=cca-spec-babel
+  - TEST_RECIPE=ccaffeine
   - TEST_RECIPE=cca-bocca
   - TEST_RECIPE=bmi-babel
   - TEST_RECIPE=csdms-components
