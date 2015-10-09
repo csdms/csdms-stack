@@ -13,13 +13,12 @@ env:
   - TEST_RECIPE=libxml2
   - TEST_RECIPE=boost-headers
   - TEST_RECIPE=chasm
-  - TEST_RECIPE=cca-babel
-  - TEST_RECIPE=cca-spec-babel
+  - TEST_RECIPE="cca-babel cca-spec-babel"
   - TEST_RECIPE=ccaffeine
   - TEST_RECIPE=cca-bocca
   - TEST_RECIPE=bmi-babel
   - TEST_RECIPE=csdms-components
-  - TEST_RECIPE=esmf
+  - TEST_RECIPE="netcdff esmf"
   - TEST_RECIPE=esmpy
   - TEST_RECIPE=coupling
   - TEST_RECIPE=wmt-exe
