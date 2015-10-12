@@ -17,4 +17,5 @@ conda build csdms-components && \
 conda build esmf && \
 conda build esmpy && \
 conda build coupling && \
-conda build wmt-exe
+conda build wmt-exe && \
+conda build stack
