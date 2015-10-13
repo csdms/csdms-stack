@@ -1,0 +1,10 @@
+package:
+  name: libiconv
+  version: 1.12
+
+source:
+  fn: libiconv-1.12.tar.gz
+  url: http://ftpmirror.gnu.org/libiconv/libiconv-1.12.tar.gz
+
+about:
+  home: 'https://www.gnu.org/software/libiconv/'
