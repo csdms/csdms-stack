@@ -12,12 +12,12 @@ source:
 requirements:
   build:
     - zlib
-    - libiconv [mac]
+    - libiconv [osx]
     - gettext
     - libffi
 
   run:
-    - libiconv [mac]
+    - libiconv [osx]
     - gettext
     - libffi
 
