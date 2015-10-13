@@ -13,6 +13,7 @@ if [ $(uname) == Darwin ]; then
 else
   JAVAPREFIX="${JAVA_HOME:-/usr/java/default}"
 fi
+JAVAPREFIX=/usr/java/default
 export JAVA=$JAVAPREFIX/bin/java
 
 export FC=$(which gfortran)
