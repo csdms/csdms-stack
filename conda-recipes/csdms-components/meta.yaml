@@ -11,7 +11,7 @@ requirements:
     - cca-spec-babel
     - ccaffeine
     - cca-bocca
-    - bmibabel
+    - bmi-babel
     - pexpect
 
   run:
@@ -22,7 +22,7 @@ requirements:
     - cca-spec-babel
     - ccaffeine
     - cca-bocca
-    - bmibabel
+    - bmi-babel
     - pexpect
 
 about:

@@ -9,11 +9,11 @@ source:
 requirements:
   build:
     - python
-    - csdms
+    - csdms-components
 
   run:
     - python
-    - csdms
+    - csdms-components
 
 about:
   summary: The Web Modeling Tool execution server.
