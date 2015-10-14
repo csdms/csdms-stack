@@ -6,7 +6,8 @@ source:
   fn: ccaffeine-0.8.8.tar.gz
   url: http://www.cca-forum.org/download/cca-tools/cca-tools-latest/ccaffeine-0.8.8.tar.gz
   patches:
-    - cxxflags.patch
+    - cxxflags-linux.patch [unix]
+    - cxxflags-osx.patch [osx]
 
 requirements:
   build:
