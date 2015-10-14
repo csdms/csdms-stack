@@ -1,13 +1,11 @@
-diff --git cxx/drivers/Makefile.in cxx/drivers/Makefile.in
-index 36aaa32..a627122 100644
---- cxx/drivers/Makefile.in
-+++ cxx/drivers/Makefile.in
-@@ -30,7 +30,7 @@ $(INCLUDES) \
+--- cxx/drivers/Makefile.in	2015-10-14 09:15:37.000000000 -0600
++++ cxx/drivers/Makefile.in	2015-10-14 09:16:29.000000000 -0600
+@@ -30,7 +30,7 @@
  $(CFLAGS) 
-   
+ 
  LOCAL_CXXFLAGS= \
 --Dlint=lint \
 +-Dlint=lint -L$(PREFIX)/lib -lsidlstub_cxx -lncursesw \
  $(CXXFLAGS) \
  $(CCAFE_PTHREADS_FLAGS)
-
+ 
