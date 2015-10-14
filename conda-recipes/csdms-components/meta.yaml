@@ -14,7 +14,7 @@ requirements:
     - bmi-babel
     - pexpect
     - glib
-    - pkgconfig [osx]
+    - pkgconfig-command [osx]
 
   run:
     - cmake
