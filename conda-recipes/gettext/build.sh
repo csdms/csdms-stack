@@ -1,6 +1,18 @@
 #!/bin/bash
+EXTRA_ARGS=""
 
-./configure --prefix="${PREFIX}" \
+if [ `uname` == Darwin ]; then
+  export CC=$(which clang)
+  export CXX=$(which clang++)
+  EXTRA_ARGS="--with-libiconv-prefix=/usr"
+fi
+
+if [[ -z $CC ]]; then
+  export CC=$(which gcc)
+  export CXX=$(which g++)
+fi
+
+./configure --prefix="${PREFIX}" $EXTRA_ARGS \
     --disable-dependency-tracking \
     --disable-silent-rules \
     --disable-debug \
