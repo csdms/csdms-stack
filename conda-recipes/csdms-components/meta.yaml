@@ -13,6 +13,8 @@ requirements:
     - cca-bocca
     - bmi-babel
     - pexpect
+    - glib
+    - pkgconfig [osx]
 
   run:
     - cmake
@@ -24,6 +26,7 @@ requirements:
     - cca-bocca
     - bmi-babel
     - pexpect
+    - glib
 
 about:
   summary: Babelized components ready to be used in the CSDMS framework.
