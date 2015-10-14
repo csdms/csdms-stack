@@ -30,10 +30,8 @@ sudo: false
 #  - sudo apt-get install -y gfortran
 
 install:
-  - wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh
-  - bash miniconda.sh -f -b -p $HOME/miniconda
+  - bash .ci/travis/install_python.sh
   - export PATH=$HOME/miniconda/bin:$PATH
-  - conda config --set always_yes yes --set changeps1 no
   - conda install conda-build
   - echo cc = $(which gcc)
   - echo fc = $(which gfortran)
