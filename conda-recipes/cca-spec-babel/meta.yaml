@@ -9,12 +9,10 @@ source:
 requirements:
   build:
     - python
-    - libiconv [osx]
     - cca-babel
     - libxml2
 
   run:
     - python
-    - libiconv [osx]
     - cca-babel
     - libxml2
