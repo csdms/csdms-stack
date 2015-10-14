@@ -1,4 +1,5 @@
 BABEL_CONFIG=$PREFIX/bin/babel-config
+JAVA_HOME=$($BABEL_CONFIG --query-var=JAVAPREFIX)
 export CC=$($BABEL_CONFIG --query-var=CC)
 export CXX=$($BABEL_CONFIG --query-var=CXX)
 
