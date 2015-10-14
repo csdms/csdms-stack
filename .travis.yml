@@ -1,7 +1,7 @@
-language: java
+#language: java
 
-jdk:
-  - openjdk7
+#jdk:
+#  - openjdk7
 
 os:
   - linux
@@ -24,9 +24,10 @@ os:
 #  - TEST_RECIPE=coupling
 #  - TEST_RECIPE=wmt-exe
 
-before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get install -y gfortran
+sudo: false
+#before_install:
+#  - sudo apt-get update -qq
+#  - sudo apt-get install -y gfortran
 
 install:
   - wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh -O miniconda.sh
