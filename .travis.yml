@@ -5,23 +5,24 @@ jdk:
 
 os:
   - linux
+  - osx
 
-env:
-  - TEST_RECIPE=libffi
-  - TEST_RECIPE=glib
-  - TEST_RECIPE=netcdff
-  - TEST_RECIPE=libxml2
-  - TEST_RECIPE=boost-headers
-  - TEST_RECIPE=chasm
-  - TEST_RECIPE="cca-babel cca-spec-babel"
-  - TEST_RECIPE=ccaffeine
-  - TEST_RECIPE=cca-bocca
-  - TEST_RECIPE=bmi-babel
-  - TEST_RECIPE=csdms-components
-  - TEST_RECIPE="netcdff esmf"
-  - TEST_RECIPE=esmpy
-  - TEST_RECIPE=coupling
-  - TEST_RECIPE=wmt-exe
+#env:
+#  - TEST_RECIPE=libffi
+#  - TEST_RECIPE=glib
+#  - TEST_RECIPE=netcdff
+#  - TEST_RECIPE=libxml2
+#  - TEST_RECIPE=boost-headers
+#  - TEST_RECIPE=chasm
+#  - TEST_RECIPE="cca-babel cca-spec-babel"
+#  - TEST_RECIPE=ccaffeine
+#  - TEST_RECIPE=cca-bocca
+#  - TEST_RECIPE=bmi-babel
+#  - TEST_RECIPE=csdms-components
+#  - TEST_RECIPE="netcdff esmf"
+#  - TEST_RECIPE=esmpy
+#  - TEST_RECIPE=coupling
+#  - TEST_RECIPE=wmt-exe
 
 before_install:
   - sudo apt-get update -qq
@@ -40,5 +41,7 @@ install:
   - echo $(gfortran --version)
 
 script:
-  - cd conda-recipes
-  - conda build $TEST_RECIPE -c https://conda.anaconda.org/mcflugen
+  - conda install csdms-stack -c https://conda.anaconda.org/csdms
+  - python -c 'from cmt.components import Hydrotrend; Hydrotrend()'
+  #- cd conda-recipes
+  #- conda build $TEST_RECIPE -c https://conda.anaconda.org/mcflugen
