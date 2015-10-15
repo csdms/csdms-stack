@@ -1,0 +1,17 @@
+package:
+  name: cem
+  version: "0.1"
+
+source:
+  git_url: https://github.com/csdms/cem-old
+  git_rev: mcflugen/add-function-pointers
+
+requirements:
+  build:
+    - cmake
+    - glib
+    - bmi-babel
+    - pexpect
+
+  run:
+    - glib
