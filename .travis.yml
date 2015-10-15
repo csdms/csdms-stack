@@ -40,7 +40,7 @@ install:
   - echo $(gfortran --version)
 
 script:
-  - conda install csdms-stack -c https://conda.anaconda.org/csdms
+  - conda install csdms-components coupling -c https://conda.anaconda.org/csdms
   - python -c 'from cmt.components import Hydrotrend; Hydrotrend()'
   #- cd conda-recipes
   #- conda build $TEST_RECIPE -c https://conda.anaconda.org/mcflugen
