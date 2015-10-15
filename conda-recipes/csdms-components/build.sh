@@ -1,4 +1,5 @@
 #! /bin/bash
+JAVA_HOME=$(babel-config --query-var=JAVAPREFIX)
 export CC=$(babel-config --query-var=CC)
 export CXX=$(babel-config --query-var=CXX)
 export USER=nobody

@@ -1,46 +1,19 @@
-#language: java
-
-#jdk:
-#  - openjdk7
-
 os:
   - linux
   - osx
 
-#env:
-#  - TEST_RECIPE=libffi
-#  - TEST_RECIPE=glib
-#  - TEST_RECIPE=netcdff
-#  - TEST_RECIPE=libxml2
-#  - TEST_RECIPE=boost-headers
-#  - TEST_RECIPE=chasm
-#  - TEST_RECIPE="cca-babel cca-spec-babel"
-#  - TEST_RECIPE=ccaffeine
-#  - TEST_RECIPE=cca-bocca
-#  - TEST_RECIPE=bmi-babel
-#  - TEST_RECIPE=csdms-components
-#  - TEST_RECIPE="netcdff esmf"
-#  - TEST_RECIPE=esmpy
-#  - TEST_RECIPE=coupling
-#  - TEST_RECIPE=wmt-exe
+env:
+  global:
+    - TRAVIS_PYTHON_VERSION="2.7"
 
 sudo: false
-#before_install:
-#  - sudo apt-get update -qq
-#  - sudo apt-get install -y gfortran
 
 install:
   - bash .ci/travis/install_python.sh
   - export PATH=$HOME/miniconda/bin:$PATH
   - conda install conda-build
-  - echo cc = $(which gcc)
-  - echo fc = $(which gfortran)
-  - echo java = $(which java)
-  - echo $(gcc --version)
-  - echo $(gfortran --version)
 
 script:
-  - conda install csdms-stack -c https://conda.anaconda.org/csdms
+  - conda install csdms-components coupling -c csdms/channel/nightly
+  - export LD_LIBRARY_PATH=$(cca-spec-babel-config --var CCASPEC_BABEL_LIBS)
   - python -c 'from cmt.components import Hydrotrend; Hydrotrend()'
-  #- cd conda-recipes
-  #- conda build $TEST_RECIPE -c https://conda.anaconda.org/mcflugen
