@@ -14,6 +14,6 @@ install:
   - conda install conda-build
 
 script:
-  - conda install csdms-components coupling -c csdms/channel/nightly
+  - conda install csdms-models coupling -c csdms/channel/nightly
   - export LD_LIBRARY_PATH=$(cca-spec-babel-config --var CCASPEC_BABEL_LIBS)
   - python -c 'from cmt.components import Hydrotrend; Hydrotrend()'
