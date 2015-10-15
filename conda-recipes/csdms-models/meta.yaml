@@ -1,0 +1,13 @@
+package:
+  name: csdms-models
+  version: "0.1"
+
+requirements:
+  run:
+    - csdms-sedflux
+    - csdms-hydrotrend
+    - csdms-cem
+    - csdms-topoflow
+
+about:
+  summary: The complete CSDMS set of models.
