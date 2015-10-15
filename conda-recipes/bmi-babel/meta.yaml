@@ -12,6 +12,7 @@ requirements:
     - pyyaml
     - nose
     - cca-bocca
+    - pexpect
 
   run:
     - python
@@ -19,6 +20,7 @@ requirements:
     - pyyaml
     - nose
     - cca-bocca
+    - pexpect
 
 build:
   entry_points:
