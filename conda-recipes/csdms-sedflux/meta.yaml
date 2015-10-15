@@ -1,0 +1,11 @@
+package:
+  name: csdms-sedflux
+  version: "2.1"
+
+requirements:
+  build:
+    - sedflux
+    - bmi-babel
+  run:
+    - sedflux
+    - bmi-babel

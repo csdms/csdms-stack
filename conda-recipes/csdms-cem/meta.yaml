@@ -1,0 +1,11 @@
+package:
+  name: csdms-cem
+  version: "0.1"
+
+requirements:
+  build:
+    - cem
+    - bmi-babel
+  run:
+    - cem
+    - bmi-babel

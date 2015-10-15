@@ -1,0 +1,11 @@
+package:
+  name: csdms-topoflow
+  version: "3.4"
+
+requirements:
+  build:
+    - topoflow
+    - bmi-babel
+  run:
+    - topoflow
+    - bmi-babel

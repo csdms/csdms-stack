@@ -1,0 +1,20 @@
+package:
+  name: topoflow
+  version: "3.4"
+
+source:
+  git_url: https://github.com/mdpiper/topoflow
+
+requirements:
+  build:
+    - python
+    - netcdf4
+    - h5py
+    - numpy
+    - scipy
+  run:
+    - python
+    - netcdf4
+    - h5py
+    - numpy
+    - scipy
