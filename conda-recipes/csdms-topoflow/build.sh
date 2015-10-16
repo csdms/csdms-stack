@@ -2,6 +2,7 @@
 
 REPOSITORY="https://github.com/mdpiper/topoflow"
 
+JAVA_HOME=$(babel-config --query-var=JAVAPREFIX)
 export CC=$(babel-config --query-var=CC)
 export CXX=$(babel-config --query-var=CXX)
 export USER=nobody

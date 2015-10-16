@@ -2,6 +2,7 @@
 
 REPOSITORY="https://github.com/mcflugen/hydrotrend,add-bmi-metadata"
 
+JAVA_HOME=$(babel-config --query-var=JAVAPREFIX)
 export CC=$(babel-config --query-var=CC)
 export CXX=$(babel-config --query-var=CXX)
 export USER=nobody
