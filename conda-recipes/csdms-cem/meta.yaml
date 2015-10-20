@@ -2,6 +2,11 @@ package:
   name: csdms-cem
   version: "0.1"
 
+build:
+  rpaths:
+    - lib/
+    - lib/cca-spec-babel-0_8_6-babel-1.4.0
+
 requirements:
   build:
     - cem
