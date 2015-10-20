@@ -9,11 +9,13 @@ source:
 requirements:
   build:
     - python
+    - requests
     - csdms-models
     - coupling
 
   run:
     - python
+    - requests
     - csdms-models
     - coupling
 
