@@ -9,7 +9,7 @@ source:
 requirements:
   build:
     - cmake
-    - glib
+    - glib [osx]
 
   run:
-    - glib
+    - glib [osx]
