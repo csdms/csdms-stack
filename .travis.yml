@@ -12,6 +12,7 @@ install:
   - bash .ci/travis/install_python.sh
   - export PATH=$HOME/miniconda/bin:$PATH
   - conda install conda-build
+  - conda build conda-recipes/libffi
   - conda build conda-recipes/gettext
   - conda build conda-recipes/glib
 
