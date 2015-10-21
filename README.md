@@ -36,5 +36,7 @@ $ export PATH=<prefix>/bin:$PATH
 Run the build script.
 ``` bash
 $ cd conda-recipes
-$ bash ./build-stash.sh # Go for coffee.
+$ bash ./build-stack.sh # Go for coffee.
 ```
+
+You will need a fortran compiler to build everything. On Mac, I use the fortran compilers here: https://gcc.gnu.org/wiki/GFortranBinaries. These are installed under ``/usr/local/gfortran`` so make sure that is in your path when building.
