@@ -12,6 +12,8 @@ install:
   - bash .ci/travis/install_python.sh
   - export PATH=$HOME/miniconda/bin:$PATH
   - conda install conda-build
+  - conda install conda-recipes/gettext
+  - conda install conda-recipes/glib
 
 script:
   - conda install csdms-models coupling -c csdms/channel/nightly
