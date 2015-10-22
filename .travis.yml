@@ -11,7 +11,7 @@ env:
   - CONDA_RECIPES="runtime"
   - CONDA_RECIPES="libffi gettext glib"
   - CONDA_RECIPES="libxml2"
-  - CONDA_RECIPES="boost_headers"
+  - CONDA_RECIPES="boost-headers"
   - CONDA_RECIPES="chasm"
   - CONDA_RECIPES="sedflux"
   - CONDA_RECIPES="topoflow"
