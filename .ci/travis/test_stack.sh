@@ -7,5 +7,4 @@ if [ $CONDA_RECIPES == "runtime" ]; then
 else
   echo "Building the CSDMS recipes: $CONDA_RECIPES"
   conda build $CONDA_RECIPES || exit -1
-  export CONDA_FILES_TO_UPLOAD=$(conda build --output --python=$TRAVIS_PYTHON_VERSION --numpy=$NUMPY_VERSION $CONDA_RECIPES) || exit -1
 fi
