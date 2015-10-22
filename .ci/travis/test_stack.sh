@@ -6,5 +6,5 @@ if [ $CONDA_RECIPES == "runtime" ]; then
   python -c 'from cmt.components import Hydrotrend; Hydrotrend()' || exit -1
 else
   echo "Building the CSDMS recipes: $CONDA_RECIPES"
-  conda build $CONDA_RECIPES || exit -1
+  (cd conda-recipes && conda build $CONDA_RECIPES) || exit -1
 fi
