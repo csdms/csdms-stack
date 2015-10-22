@@ -9,14 +9,14 @@ env:
   - secure: QYSoKqc5l+gmoPmk+gWhvoQLU2UVyRBx5VyyrPUGfbyLXRZ/TZQpdiRakcckr4hWGf8O2iZfgyWnc4axlukIVhlpBX6LdRmiSQG0HZWMElc9vRlQX4AVnYiF/B47WIPcWJs8Q/nnrAXNmyGZ6mT8lVDtENgr8OsNiRcMS7yCRJ90oViVSq9zCkEssfb1+1jDlF+mdOe6Bscwp5MoJbKiopcwV8avUIT8X5yC2xj8Kqa/6+v3sZDuJ30QWBgU5x3Ul1cIPbnJDFWzw4arS8DlgUV71oVTIPXOeMvue9E8LTz5u9+4RBwWEgQnR9QVAP7u3Ct5SXWLpPon7IYFluR0PcwpjXPpnSg9cGhN+dsbyel9B3GqyCFDRv7GC+J+swod2C6smNiEi38HdjnutAdsXwzQWUEM15FZPS6np8W+ofYZGqXbQ099XYMEBC2Cm0XBANt0ZeoFLbmTUc12y98dmJYYe0xKvMCGuF4HHhzjMxVqMWEwGMJgq0c47iynS8LMpM86Cujtt9uCu8nXelZ4K7uZEnn2sQsIjBKVAnwrVK06WpEy6ce8acidhVBplNPT2zQsitn5mWvrIHCbDxIfxQbfwTLTm0LZ9Pv3hWs8T/3VTfPGa3wG5Bhrt34rLMAt/cjrmH0qH//gWozSGqe/yOhA9VMQy2oUKO/gtjrfF+c=
   matrix:
   - CONDA_RECIPES=""
-  - CONDA_RECIPES="libffi gettext glib"
+  - CONDA_RECIPES="conda-recipes/libffi conda-recipes/gettext conda-recipes/glib"
 sudo: false
 install:
 - bash .ci/travis/install_python.sh
 - export PATH=$HOME/miniconda/bin:$PATH
 - conda install conda-build anaconda-client
 script:
-- ./.ci/travis/build_recipes.sh $CONDA_RECIPES
+- bash ./.ci/travis/build_recipes.sh $CONDA_RECIPES
 - export CONDA_FILES_TO_UPLOAD=$(conda build --output --python=$TRAVIS_PYTHON_VERSION
   --numpy=$NUMPY_VERSION $CONDA_RECIPES)
 deploy:
