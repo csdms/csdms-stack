@@ -16,11 +16,11 @@ install:
 - export PATH=$HOME/miniconda/bin:$PATH
 - conda install conda-build anaconda-client
 script:
-- if [ $(CONDA_RECIPES) == "runtime" ]; then
+- if [ $CONDA_RECIPES == "runtime" ]; then
     conda install csdms-models coupling -c csdms/channel/nightly;
     python -c 'from cmt.components import Hydrotrend; Hydrotrend()';
   fi
-- if [ $(CONDA_RECIPES) != "runtime" ]; then
+- if [ $CONDA_RECIPES != "runtime" ]; then
     bash ./.ci/travis/build_recipes.sh $CONDA_RECIPES;
     export CONDA_FILES_TO_UPLOAD=$(conda build --output --python=$TRAVIS_PYTHON_VERSION --numpy=$NUMPY_VERSION $CONDA_RECIPES);
   fi
