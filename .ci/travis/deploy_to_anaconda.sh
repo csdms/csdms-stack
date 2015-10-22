@@ -1,6 +1,6 @@
 #! /bin/bash
 
-if [[ -z $CONDA_RECIPES ]]; then
+if [ $CONDA_RECIPES != "runtime" ]; then
   CONDA_FILES_TO_UPLOAD=$(conda build --output --python=$TRAVIS_PYTHON_VERSION --numpy=$NUMPY_VERSION $CONDA_RECIPES)
 
   echo Deploying $CONDA_FILES_TO_UPLOAD to $CONDA_USERNAME
