@@ -1,3 +1,3 @@
 #! /bin/bash
 
-conda build $1
+conda build $*
