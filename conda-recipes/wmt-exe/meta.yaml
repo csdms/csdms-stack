@@ -1,5 +1,5 @@
 package:
-  name: wmtexe
+  name: wmt-exe
   version: "0.1"
 
 source:
@@ -9,11 +9,15 @@ source:
 requirements:
   build:
     - python
-    - csdms
+    - requests
+    - csdms-models
+    - coupling
 
   run:
     - python
-    - csdms
+    - requests
+    - csdms-models
+    - coupling
 
 about:
   summary: The Web Modeling Tool execution server.

@@ -1,6 +1,7 @@
-#!/bin/bash
-export CC=$(which clang)
-export CXX=$(which clang++)
+if [ `uname` == Darwin ]; then
+  export CC=$(which clang)
+  export CXX=$(which clang++)
+fi
 
 if [[ -z $CC ]]; then
   export CC=$(which gcc)

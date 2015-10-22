@@ -1,10 +1,11 @@
 #! /bin/bash
 
 #conda build gettext
+
 conda build libffi && \
-conda build libxml2 && \
 conda build glib && \
 conda build netcdff && \
+conda build libxml2 && \
 conda build boost-headers && \
 conda build chasm && \
 conda build cca-babel && \
@@ -16,4 +17,5 @@ conda build csdms-components && \
 conda build esmf && \
 conda build esmpy && \
 conda build coupling && \
-conda build wmt-exe
+conda build wmt-exe && \
+conda build stack

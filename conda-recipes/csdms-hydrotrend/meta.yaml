@@ -1,0 +1,16 @@
+package:
+  name: csdms-hydrotrend
+  version: "3.0"
+
+build:
+  rpaths:
+    - lib/
+    - lib/cca-spec-babel-0_8_6-babel-1.4.0
+
+requirements:
+  build:
+    - hydrotrend
+    - bmi-babel
+  run:
+    - hydrotrend
+    - bmi-babel

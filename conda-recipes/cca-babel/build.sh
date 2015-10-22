@@ -1,5 +1,7 @@
-#export CC=$(which clang)
-#export CXX=$(which clang++)
+if [ `uname` == Darwin ]; then
+  export CC=$(which clang)
+  export CXX=$(which clang++)
+fi
 
 if [[ -z $CC ]]; then
   export CC=$(which gcc)
@@ -7,13 +9,11 @@ if [[ -z $CC ]]; then
 fi
 
 if [ $(uname) == Darwin ]; then
-  export JAVAPREFIX=$(/usr/libexec/java_home)
+  #export JAVAPREFIX=$(/usr/libexec/java_home)
+  export JAVAPREFIX=/usr
 else
-  if [[ -z $JAVA_HOME ]]; then
-    export JAVAPREFIX=/usr/java/default
-  else
-    export JAVAPREFIX=$JAVA_HOME
-  fi
+  JAVAPREFIX="${JAVA_HOME:-/usr/java/default}"
+  export JAVAPREFIX="/usr/java/default"
 fi
 export JAVA=$JAVAPREFIX/bin/java
 
@@ -23,6 +23,7 @@ export F90=$(which gfortran)
 export F03=$(which gfortran)
 
 export PYTHON=$PREFIX/bin/python
+export PATH=$JAVAPREFIX/bin:$PATH
 
 ./configure --prefix=$PREFIX --disable-documentation --disable-java
 make all -j4

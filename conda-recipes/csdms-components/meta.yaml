@@ -1,5 +1,5 @@
 package:
-  name: csdms
+  name: csdms-components
   version: "0.1"
 
 requirements:
@@ -11,8 +11,10 @@ requirements:
     - cca-spec-babel
     - ccaffeine
     - cca-bocca
-    - bmibabel
+    - bmi-babel
     - pexpect
+    - glib
+    - pkgconfig-command [osx]
 
   run:
     - cmake
@@ -22,8 +24,9 @@ requirements:
     - cca-spec-babel
     - ccaffeine
     - cca-bocca
-    - bmibabel
+    - bmi-babel
     - pexpect
+    - glib
 
 about:
   summary: Babelized components ready to be used in the CSDMS framework.

@@ -4,14 +4,14 @@ package:
 
 requirements:
   build:
-    - csdms
+    - csdms-components
     - coupling
-    - wmtexe
+    - wmt-exe
 
   run:
-    - csdms
+    - csdms-components
     - coupling
-    - wmtexe
+    - wmt-exe
 
 about:
   summary: The complete CSDMS software stack.

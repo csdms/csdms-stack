@@ -7,7 +7,7 @@ index 36aaa32..a627122 100644
    
  LOCAL_CXXFLAGS= \
 --Dlint=lint \
-+-Dlint=lint -L$(PREFIX)/lib -lsidlstub_cxx -lncursesw \
++-Dlint=lint -L$(PREFIX)/lib -lsidlstub_cxx -lncursesw -ltinfo \
  $(CXXFLAGS) \
  $(CCAFE_PTHREADS_FLAGS)
 

@@ -5,8 +5,9 @@ package:
 source:
   fn: babel-1.4.0.tar.gz
   url: http://computation.llnl.gov/casc/components/docs/babel-1.4.0.tar.gz
-  patches: [osx]
+  patches:
     - mac-inline.patch [osx]
+    - override-java.patch [linux]
 
 build:
   script_env:
@@ -14,14 +15,12 @@ build:
 
 requirements:
   build:
-    - gcc
     - python
     - numpy
     - libxml2
     - chasm
 
   run:
-    - gcc
     - python
     - numpy
     - libxml2
