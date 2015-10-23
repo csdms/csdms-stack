@@ -5,7 +5,10 @@ if [ "$CONDA_RECIPES" != "runtime" ]; then
 
   CONDA_FILES_TO_UPLOAD=$(conda build --output --python=$TRAVIS_PYTHON_VERSION --numpy=$NUMPY_VERSION $CONDA_RECIPES)
 
+  if [ "$(anaconda whoami)" != "$CONDA_USERNAME" ]; then
+    anaconda login --username=$CONDA_USERNAME --password=$CONDA_PASSWORD
+  fi
+
   echo Deploying $CONDA_FILES_TO_UPLOAD to $CONDA_USERNAME
-  anaconda login --username=$CONDA_USERNAME --password=$CONDA_PASSWORD
   anaconda upload --force --user csdms --channel travis $CONDA_FILES_TO_UPLOAD
 fi
