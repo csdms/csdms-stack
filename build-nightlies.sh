@@ -1,27 +1,5 @@
 #! /bin/bash
 
-export PATH=/usr/bin:/bin:/usr/sbin:/etc:/usr/lib
-
-GIT=/usr/bin/git
-WGET=/usr/bin/wget
-
-tmpdir=$(mktemp -d --suffix=.stack)
-echo $tmpdir > stack-build-dir.txt
-
-cd $tmpdir || exit -1
-
-echo Building in $tmpdir
-
-$GIT clone git@github.com:csdms/csdms-stack.git
-cd csdms-stack
-PYTHON_PREFIX=$(pwd)/conda
-
-$WGET http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh
-bash Miniconda-latest-Linux-x86_64.sh -f -b -p $PYTHON_PREFIX
-export PATH=$PYTHON_PREFIX/bin:$PATH
-
-conda install conda-build anaconda-client
-
 RECIPES=" \
   libffi \
   glib \
@@ -42,13 +20,49 @@ RECIPES=" \
   csdms-stack \
 "
 
+RECIPES=" \
+  sedflux \
+  hydrotrend \
+"
+
+
+export PATH=/usr/bin:/bin:/usr/sbin:/etc:/usr/lib
+
+GIT=/usr/bin/git
+CURL=/usr/bin/curl
+
+CONDA_URL_PREFIX=http://repo.continuum.io/miniconda/
+if [ `uname` == 'Darwin' ]; then
+  MINICONDA=Miniconda-latest-MacOSX-x86_64.sh
+else
+  MINICONDA=Miniconda-latest-Linux-x86_64.sh
+fi
+
+TMPDIR=_temp
+#TMPDIR=$(mktemp -d --suffix=.stack)
+
+mkdir $TMPDIR
+
+cd $TMPDIR || exit -1
+echo Building in $TMPDIR
+
+$GIT clone git@github.com:csdms/csdms-stack.git
+cd csdms-stack
+PYTHON_PREFIX=$(pwd)/conda
+
+$CURL $CONDA_URL_PREFIX/$MINICONDA -o miniconda.sh
+bash miniconda.sh -f -b -p $PYTHON_PREFIX
+export PATH=$PYTHON_PREFIX/bin:$PATH
+
+conda install conda-build anaconda-client
+
 cd conda-recipes
-for r in $RECIPES; do
-  conda build $r && anaconda upload --force --channel nightly --user csdms $PYTHON_PREFIX/conda-bld/linux-64/$r*tar.bz2
+for recipe in $RECIPES; do
+  conda build $recipe && anaconda upload --force --channel nightly --channel main --user csdms $(conda build $recipe --output)
   wait
 done
 #bash ./build-stack.sh
 
 #anaconda upload --force --channel dev --user csdms -c https://conda.anaconda.org/csdms pkgs/*tar.bz2
 
-#rm -rf $tmpdir
+#rm -rf $TMPDIR
