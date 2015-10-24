@@ -5,7 +5,7 @@ if [ "$CONDA_RECIPES" != "runtime" ]; then
 
   CONDA_FILES_TO_UPLOAD=$(conda build --output --python=$TRAVIS_PYTHON_VERSION --numpy=$NUMPY_VERSION $CONDA_RECIPES)
 
-  if [ "$(anaconda whoami)" != "$CONDA_USERNAME" ]; then
+  if [ "$(anaconda whoami)" == "Anonymous User" ]; then
     anaconda login --username=$CONDA_USERNAME --password=$CONDA_PASSWORD
   fi
 
