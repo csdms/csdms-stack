@@ -8,6 +8,7 @@ requirements:
     - csdms-hydrotrend
     - csdms-cem
     - csdms-topoflow
+    - csdms-rafem
 
 about:
   summary: The complete CSDMS set of models.
