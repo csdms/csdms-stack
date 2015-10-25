@@ -1,6 +1,6 @@
 #! /bin/bash
 
-REPOSITORY="https://github.com/mcflugen/avulsion-bmi"
+REPOSITORY="https://github.com/mcflugen/avulsion-bmi,add-bmi-metadata"
 
 JAVA_HOME=$(babel-config --query-var=JAVAPREFIX)
 export CC=$(babel-config --query-var=CC)
