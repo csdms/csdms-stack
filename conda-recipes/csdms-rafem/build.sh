@@ -21,4 +21,6 @@ $PREFIX/bin/bmi-babel-make _models.yaml
 cd csdms && ./configure --prefix=$PREFIX && make all && make install
 
 mkdir -p $PREFIX/share/cca
+mkdir -p $PREFIX/lib
 cp install/share/cca/*.cca $PREFIX/share/cca/
+cp install/lib/libcsdms*.la $PREFIX/lib/
