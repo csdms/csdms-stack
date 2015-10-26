@@ -19,3 +19,6 @@ $PREFIX/bin/bmi-babel-fetch --no-build --file=_repos.yaml --prefix=$PREFIX > _mo
 $PREFIX/bin/bmi-babel-make _models.yaml
 
 cd csdms && ./configure --prefix=$PREFIX && make all install
+
+mkdir -p $PREFIX/share/cca
+cp install/share/cca/*.cca $PREFIX/share/cca/
