@@ -20,13 +20,10 @@ RECIPES=" \
   csdms-stack \
 "
 
-RECIPES=" \
-  sedflux \
-  hydrotrend \
-"
+#RECIPES="topoflow csdms-topoflow"
+RECIPES=""
 
-
-export PATH=/usr/bin:/bin:/usr/sbin:/etc:/usr/lib
+export PATH=/usr/bin:/bin:/usr/sbin:/etc:/usr/lib:/usr/local/gfortran/bin
 
 GIT=/usr/bin/git
 CURL=/usr/bin/curl
@@ -38,31 +35,37 @@ else
   MINICONDA=Miniconda-latest-Linux-x86_64.sh
 fi
 
-TMPDIR=_temp
+TMPDIR=$(pwd)/_temp
 #TMPDIR=$(mktemp -d --suffix=.stack)
-
-mkdir $TMPDIR
-
-cd $TMPDIR || exit -1
-echo Building in $TMPDIR
-
-$GIT clone git@github.com:csdms/csdms-stack.git
-cd csdms-stack
-PYTHON_PREFIX=$(pwd)/conda
-
-$CURL $CONDA_URL_PREFIX/$MINICONDA -o miniconda.sh
-bash miniconda.sh -f -b -p $PYTHON_PREFIX
+PYTHON_PREFIX=$TMPDIR/csdms-stack/conda
 export PATH=$PYTHON_PREFIX/bin:$PATH
 
-conda install conda-build anaconda-client
+if [ -d "$TMPDIR" ]; then
+  cd $TMPDIR/csdms-stack
+else
+  mkdir $TMPDIR && cd $TMPDIR
+  $GIT clone git@github.com:csdms/csdms-stack.git
+  cd csdms-stack
+  $CURL $CONDA_URL_PREFIX/$MINICONDA -o miniconda.sh
+  bash miniconda.sh -f -b -p $PYTHON_PREFIX
+  conda install conda-build anaconda-client
+fi
+
+conda config --set show_channel_urls yes
+
+if [ `uname` == 'Darwin' ]; then
+  (cd /usr/local && mv bin bin.hide && mv lib lib.hide && mv include include.hide)
+fi
 
 cd conda-recipes
 for recipe in $RECIPES; do
-  conda build $recipe && anaconda upload --force --channel nightly --channel main --user csdms $(conda build $recipe --output)
+  #conda build $recipe
+  (conda build -c csdms $recipe && anaconda upload --force --channel nightly --channel main --user csdms $(conda build $recipe --output)) || exit -1
   wait
 done
-#bash ./build-stack.sh
-
-#anaconda upload --force --channel dev --user csdms -c https://conda.anaconda.org/csdms pkgs/*tar.bz2
 
 #rm -rf $TMPDIR
+if [ `uname` == 'Darwin' ]; then
+  (cd /usr/local && mv bin.hide bin && mv lib.hide lib && mv include.hide include)
+fi
+
