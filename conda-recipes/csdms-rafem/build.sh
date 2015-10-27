@@ -26,12 +26,18 @@ mkdir -p $PREFIX/lib
 OLD=$(echo $(pwd)/install | sed -e 's/[]\/$*.^|[]/\\&/g')
 NEW=$(echo "/opt/anaconda1anaconda2anaconda3" | sed -e 's/[\/&]/\\&/g')
 
+if [ `uname` == Darwin ]; then
+  SED_OPTS="-i bak"
+else
+  SED_OPTS="--inplace=bak"
+fi
+
 for f in install/share/cca/*.cca; do
-  sed -i '' s/$OLD/$NEW/g $f
+  sed $SED_OPTS  s/$OLD/$NEW/g $f
   cp $f $PREFIX/share/cca/
 done
 for f in install/lib/libcsdms*la; do
-  sed -i '' s/$OLD/$NEW/g $f
+  sed $SED_OPTS s/$OLD/$NEW/g $f
 done
 
 for f in install/lib/libcsdms*; do
