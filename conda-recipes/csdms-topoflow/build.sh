@@ -21,4 +21,19 @@ $PREFIX/bin/bmi-babel-make _models.yaml
 cd csdms && ./configure --prefix=$PREFIX && make all install
 
 mkdir -p $PREFIX/share/cca
-cp install/share/cca/*.cca $PREFIX/share/cca/
+mkdir -p $PREFIX/lib
+
+OLD=$(echo $(pwd)/install | sed -e 's/[]\/$*.^|[]/\\&/g')
+NEW=$(echo "/opt/anaconda1anaconda2anaconda3" | sed -e 's/[\/&]/\\&/g')
+
+for f in install/share/cca/*.cca; do
+  sed -i '' s/$OLD/$NEW/g $f
+  cp $f $PREFIX/share/cca/
+done
+for f in install/lib/libcsdms*la; do
+  sed -i '' s/$OLD/$NEW/g $f
+done
+
+for f in install/lib/libcsdms*; do
+  cp $f $PREFIX/lib/
+done
