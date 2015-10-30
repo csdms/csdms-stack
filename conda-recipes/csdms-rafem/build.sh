@@ -18,7 +18,7 @@ echo "- $REPOSITORY" > _repos.yaml
 $PREFIX/bin/bmi-babel-fetch --no-build --file=_repos.yaml --prefix=$PREFIX > _models.yaml
 $PREFIX/bin/bmi-babel-make _models.yaml
 
-cd csdms && ./configure --prefix=$PREFIX && make all && make install
+cd csdms && ./configure --prefix=$PREFIX --with-languages="python c" && make all && make install
 
 mkdir -p $PREFIX/share/cca
 mkdir -p $PREFIX/lib
@@ -44,5 +44,6 @@ for f in install/lib/libcsdms*; do
   cp $f $PREFIX/lib/
 done
 
-#cp install/share/cca/*.cca $PREFIX/share/cca/
-#cp install/lib/libcsdms*.la $PREFIX/lib/
+for f in install/lib/python2.7/site-packages/csdms/*py; do
+  cp $f $PREFIX/lib/python2.7/site-packages/csdms/
+done
