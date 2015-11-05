@@ -15,7 +15,7 @@ Install the CSDMS software stack.
 ``` bash
 $ conda create -n csdms python=2.7
 $ source activate csdms
-$ conda install -c https://conda.anaconda.org/csdms csdms-stack
+$ conda install -c https://conda.anaconda.org/csdms csdms
 $ conda install ipython
 ```
 
