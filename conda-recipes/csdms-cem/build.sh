@@ -18,4 +18,4 @@ echo "- $REPOSITORY" > _repos.yaml
 $PREFIX/bin/bmi-babel-fetch --no-build --file=_repos.yaml --prefix=$PREFIX > _models.yaml
 $PREFIX/bin/bmi-babel-make _models.yaml
 
-cd csdms && ./configure --prefix=$PREFIX && make all install
+cd csdms && ./configure --prefix=$PREFIX --with-languages="python c" && make all && make install
