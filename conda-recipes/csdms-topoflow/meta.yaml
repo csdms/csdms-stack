@@ -3,6 +3,7 @@ package:
   version: "3.4"
 
 build:
+  number: 1
   rpaths:
     - lib/
     - lib/cca-spec-babel-0_8_6-babel-1.4.0
