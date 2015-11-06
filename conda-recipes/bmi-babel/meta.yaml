@@ -24,6 +24,7 @@ requirements:
     - pexpect
 
 build:
+  number: 1
   entry_points:
     - bmi-babel-make=bmibabel.cmd.make:main
     - bmi-babel-fetch=bmibabel.cmd.bmi_babel_fetch:main
