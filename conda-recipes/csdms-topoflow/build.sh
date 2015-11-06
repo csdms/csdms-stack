@@ -15,7 +15,10 @@ fi
 
 echo "- $REPOSITORY" > _repos.yaml
 
-$PREFIX/bin/bmi-babel-fetch --no-build --file=_repos.yaml --prefix=$PREFIX > _models.yaml
+SHARE_DIR=$PREFIX/share/csdms
+mkdir -p $SHARE_DIR
+
+$PREFIX/bin/bmi-babel-fetch --no-build --file=_repos.yaml --prefix=$PREFIX --output=$SHARE_DIR > _models.yaml
 $PREFIX/bin/bmi-babel-make _models.yaml
 
 if [ $(uname) == Darwin ]; then

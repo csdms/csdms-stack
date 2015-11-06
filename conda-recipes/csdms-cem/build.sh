@@ -15,14 +15,13 @@ fi
 
 echo "- $REPOSITORY" > _repos.yaml
 
-mkdir -p share/csdms
+SHARE_DIR=$PREFIX/share/csdms
+mkdir -p $SHARE_DIR
 
-$PREFIX/bin/bmi-babel-fetch --no-build --file=_repos.yaml --prefix=$PREFIX --output=share/csdms > _models.yaml
+$PREFIX/bin/bmi-babel-fetch --no-build --file=_repos.yaml --prefix=$PREFIX --output=$SHARE_DIR > _models.yaml
 $PREFIX/bin/bmi-babel-make _models.yaml
 
 if [ $(uname) == Darwin ]; then
   export LDFLAGS="-headerpad_max_install_names"
 fi
 cd csdms && ./configure --prefix=$PREFIX --with-languages="python c" && make all && make install
-
-cp -r share/csdms/* $PREFIX/share/csdms/
