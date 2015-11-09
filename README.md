@@ -1,11 +1,8 @@
 The CSDMS Software Stack
 ========================
 
-Installation
-------------
-
-Mac
-+++
+Installation (Mac)
+------------------
 
 Create a new folder to hold the Python installation, will contain the
 CSDMS stack, and grab the Miniconda installer.
