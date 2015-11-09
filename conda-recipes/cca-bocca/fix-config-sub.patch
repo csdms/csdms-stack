@@ -1,0 +1,30 @@
+diff -crB boccalib/templates/autotools/utils/__tcejorp__-config.in boccalib/templates/autotools/utils/__tcejorp__-config.in
+*** boccalib/templates/autotools/utils/__tcejorp__-config.in	2015-11-07 21:16:43.000000000 -0700
+--- boccalib/templates/autotools/utils/__tcejorp__-config.in	2015-11-07 21:17:22.000000000 -0700
+***************
+*** 70,75 ****
+--- 70,78 ----
+  if test "$1" = "--var"; then
+    s="\${$2:?Not_A_CCAFE_Config_Variable}"
+    s2=`echo $s`
++   for i in $(seq 10); do
++     s2=$(eval echo $s2)
++   done
+    config_tmp_val=`eval echo $s2`
+    echo $config_tmp_val
+  fi
+diff -crB boccalib/templates/gmake/utils/__tcejorp__-config.in boccalib/templates/gmake/utils/__tcejorp__-config.in
+*** boccalib/templates/gmake/utils/__tcejorp__-config.in	2015-11-07 21:27:40.000000000 -0700
+--- boccalib/templates/gmake/utils/__tcejorp__-config.in	2015-11-07 21:27:59.000000000 -0700
+***************
+*** 68,73 ****
+--- 68,76 ----
+  if test "$1" = "--var"; then
+    s="\${$2:?Not_A_CCAFE_Config_Variable}"
+    s2=`echo $s`
++   for i in $(seq 10); do
++     s2=$(eval echo $s2)
++   done
+    config_tmp_val=`eval echo $s2`
+    echo $config_tmp_val
+  fi

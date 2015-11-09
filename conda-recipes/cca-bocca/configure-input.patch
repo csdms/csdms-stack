@@ -1,0 +1,11 @@
+--- boccalib/templates/gmake/configure	2015-11-07 12:40:55.000000000 -0700
++++ boccalib/templates/gmake/configure	2015-11-07 12:40:26.000000000 -0700
+@@ -3923,7 +3923,7 @@
+     configure_input="Generated from "`IFS=:
+ 	  echo $* | sed 's|^[^:]*/||;s|:[^:]*/|, |g'`" by configure."
+     if test x"$ac_file" != x-; then
+-      configure_input="$ac_file.  $configure_input"
++      configure_input="'$ac_file.  $configure_input'"
+       { echo "$as_me:$LINENO: creating $ac_file" >&5
+ echo "$as_me: creating $ac_file" >&6;}
+     fi

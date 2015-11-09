@@ -5,6 +5,9 @@ package:
 source:
   fn: bocca-0.5.7.tar.gz
   url: http://www.cca-forum.org/download/cca-tools/cca-tools-latest/bocca-0.5.7.tar.gz
+  patches:
+    - configure-input.patch
+    - fix-config-sub.patch
 
 requirements:
   build:
