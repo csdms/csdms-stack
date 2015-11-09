@@ -4,22 +4,33 @@ The CSDMS Software Stack
 Installation
 ------------
 
-Install the Anaconda Python distribution.
+Mac
++++
+
+Create a new folder to hold the Python installation, will contain the
+CSDMS stack, and grab the Miniconda installer.
+
 ``` bash
-$ wget http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh
-$ bash Miniconda-latest-Linux-x86_64.sh -f -b -p <prefix>
-$ export PATH=<prefix>/bin:$PATH
+$ mkdir py-csdms
+$ cd py-csdms
+$ curl http://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh -o miniconda.sh
 ```
 
-Install the CSDMS software stack.
+Install a fresh Python and add it to your path,
 ``` bash
-$ conda create -n csdms python=2.7
-$ source activate csdms
-$ conda install -c https://conda.anaconda.org/csdms csdms
-$ conda install ipython
+$ bash miniconda.sh -f -b -p $(pwd)/conda
+$ export PATH=$(pwd)/conda/bin:$PATH
+```
+Remember this only changes your path for this session. You will have to
+either add this Python to your `PATH` whenever you start a new shell or add
+it to your startup rc file (`.bashrc`, or `.bash_profile`, etc.).
+
+Install CSDMS packages into this new Python,
+``` bash
+$ conda install csdms-rafem csdms-cem -c csdms
 ```
 
-For Macs, the link to the miniconda installer is: http://repo.continuum.io/miniconda/Miniconda-latest-MacOSX-x86_64.sh
+For Linux, the link to the miniconda installer is: http://repo.continuum.io/miniconda/Miniconda-latest-Linux-x86_64.sh
 
 The full archive is at: http://repo.continuum.io/miniconda/index.html
 
