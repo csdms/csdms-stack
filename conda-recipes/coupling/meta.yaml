@@ -6,6 +6,9 @@ source:
   git_url: https://github.com/csdms/coupling
   git_rev: mcflugen/fix-for-new-bmi
 
+build:
+  number: 1
+
 requirements:
   build:
     - python

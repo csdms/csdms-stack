@@ -6,6 +6,9 @@ source:
   git_url: https://github.com/mcflugen/avulsion-bmi
   git_rev: add-bmi-metadata
 
+build:
+  number: 1
+
 requirements:
   build:
     - python
