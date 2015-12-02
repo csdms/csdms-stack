@@ -3,7 +3,7 @@ package:
   version: "0.8.6"
 
 source:
-  fn: cca-spec-babel-0.8.6.tar.gz
+  git_url: https://github.com/csdms/cca-spec-babel
   url: http://www.cca-forum.org/download/cca-tools/cca-tools-latest/cca-spec-babel-0.8.6.tar.gz
 
 requirements:
