@@ -29,13 +29,16 @@ install:
 script:
 # - bash .ci/travis/test_stack.sh
  - cd conda-recipes
- - conda build $CONDA_RECIPES -c csdms
+ - anaconda login --username=$CONDA_USERNAME --password=$CONDA_PASSWORD
+ - CONDA_FILES_TO_UPLOAD=$(conda build --output --python=$TRAVIS_PYTHON_VERSION --numpy=$NUMPY_VERSION $CONDA_RECIPES)
+ - echo $CONDA_FILES_TO_UPLOAD
+ - conda build $CONDA_RECIPES -c csdms && anaconda upload --force --user csdms --channel $BUILD_STR $CONDA_FILES_TO_UPLOAD
 # - conda build cca-babel -c csdms
 # - conda build cca-spec-babel -c csdms
 # - conda build ccaffeine -c csdms
-deploy:
-  provider: script
-  skip_cleanup: true
-  script: .ci/travis/deploy_to_anaconda.sh
-  on:
-    branch: master
+#deploy:
+#  provider: script
+#  skip_cleanup: true
+#  script: .ci/travis/deploy_to_anaconda.sh
+#  on:
+#    branch: master
