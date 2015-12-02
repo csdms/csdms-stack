@@ -29,7 +29,10 @@ install:
 script:
 # - bash .ci/travis/test_stack.sh
  - cd conda-recipes
- - if [ "$(anaconda whoami)" == "Anonymous User" ]; then anaconda login --username=$CONDA_USERNAME --password=$CONDA_PASSWORD; fi
+ - echo $(anaconda whoami)
+ - anaconda logout
+ - anaconda login --username=$CONDA_USERNAME --password=$CONDA_PASSWORD
+ - echo $(anaconda whoami)
  - CONDA_FILES_TO_UPLOAD=$(conda build --output --python=$TRAVIS_PYTHON_VERSION --numpy=$NUMPY_VERSION $CONDA_RECIPES)
  - echo $CONDA_FILES_TO_UPLOAD
  - conda build $CONDA_RECIPES -c csdms && anaconda upload --force --user csdms --channel $BUILD_STR $CONDA_FILES_TO_UPLOAD
