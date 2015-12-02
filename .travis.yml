@@ -32,7 +32,7 @@ script:
  - cd conda-recipes
  - CONDA_FILES_TO_UPLOAD=$(conda build --output --python=$TRAVIS_PYTHON_VERSION --numpy=$NUMPY_VERSION $CONDA_RECIPES)
  - echo $CONDA_FILES_TO_UPLOAD
- - conda build $CONDA_RECIPES -c csdms && anaconda upload -t $ANACONDA_TOKEN --force --user csdms --channel $BUILD_STR $CONDA_FILES_TO_UPLOAD
+ - conda build $CONDA_RECIPES -c csdms && anaconda -t $ANACONDA_TOKEN upload --force --user csdms --channel $BUILD_STR $CONDA_FILES_TO_UPLOAD
 # - conda build cca-babel -c csdms
 # - conda build cca-spec-babel -c csdms
 # - conda build ccaffeine -c csdms
