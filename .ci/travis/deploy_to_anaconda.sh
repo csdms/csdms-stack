@@ -10,5 +10,5 @@ if [ "$CONDA_RECIPES" != "runtime" ]; then
   fi
 
   echo Deploying $CONDA_FILES_TO_UPLOAD to $CONDA_USERNAME
-  anaconda upload --force --user csdms --channel travis $CONDA_FILES_TO_UPLOAD
+  anaconda upload --force --user csdms --channel dev $CONDA_FILES_TO_UPLOAD
 fi
