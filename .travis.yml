@@ -29,9 +29,7 @@ install:
 script:
 # - bash .ci/travis/test_stack.sh
  - cd conda-recipes
- - for recipe in $CONDA_RECIPES; do
-     conda build $recipe -c csdms
-   done
+ - conda build $CONDA_RECIPES -c csdms
 # - conda build cca-babel -c csdms
 # - conda build cca-spec-babel -c csdms
 # - conda build ccaffeine -c csdms
