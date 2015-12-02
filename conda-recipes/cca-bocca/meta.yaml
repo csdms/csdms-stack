@@ -8,6 +8,9 @@ source:
     - configure-input.patch
     - fix-config-sub.patch
 
+build:
+  string: {{ environ.get('BUILD_STR', '') }}
+
 requirements:
   build:
     - python

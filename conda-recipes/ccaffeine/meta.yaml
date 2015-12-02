@@ -8,6 +8,9 @@ source:
     - cxxflags-linux.patch [linux]
     - cxxflags-osx.patch [osx]
 
+build:
+  string: {{ environ.get('BUILD_STR', '') }}
+
 requirements:
   build:
     - python

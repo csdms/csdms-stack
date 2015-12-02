@@ -11,6 +11,8 @@ source:
 build:
   script_env:
     - JAVA_HOME
+  string: {{ environ.get('BUILD_STR', '') }}
+
 
 requirements:
   build:
