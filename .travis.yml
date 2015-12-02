@@ -12,12 +12,11 @@ env:
   matrix:
 #  - CONDA_RECIPES="runtime"
 #  - CONDA_RECIPES="development"
-#  - CONDA_RECIPES="cca-babel cca-spec-babel ccaffeine cca-bocca"
+  - CONDA_RECIPES="cca-babel cca-spec-babel ccaffeine cca-bocca"
   - CONDA_RECIPES="chasm"
   - CONDA_RECIPES="boost-headers"
 #  - CONDA_RECIPES="libffi gettext glib"
 #  - CONDA_RECIPES="libxml2"
-#  - CONDA_RECIPES="boost-headers"
 #  - CONDA_RECIPES="sedflux"
 #  - CONDA_RECIPES="topoflow"
 #  - CONDA_RECIPES="cem"
@@ -28,14 +27,10 @@ install:
 - export PATH=$HOME/miniconda/bin:$PATH
 - conda install conda-build anaconda-client
 script:
-# - bash .ci/travis/test_stack.sh
  - cd conda-recipes
  - CONDA_FILES_TO_UPLOAD=$(conda build --output --python=$TRAVIS_PYTHON_VERSION --numpy=$NUMPY_VERSION $CONDA_RECIPES)
  - echo $CONDA_FILES_TO_UPLOAD
  - conda build $CONDA_RECIPES -c csdms && anaconda -t $ANACONDA_TOKEN upload --force --user csdms --channel $BUILD_STR $CONDA_FILES_TO_UPLOAD
-# - conda build cca-babel -c csdms
-# - conda build cca-spec-babel -c csdms
-# - conda build ccaffeine -c csdms
 #deploy:
 #  provider: script
 #  skip_cleanup: true
