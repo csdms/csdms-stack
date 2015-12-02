@@ -30,14 +30,14 @@ script:
 # - bash .ci/travis/test_stack.sh
  - cd conda-recipes
  - for recipe in $CONDA_RECIPES; do
-     conda build $recipe -c csdms && anaconda upload --force --channel $BUILD_STR --user csdms $(conda build $recipe --output);
+     conda build $recipe -c csdms
    done
 # - conda build cca-babel -c csdms
 # - conda build cca-spec-babel -c csdms
 # - conda build ccaffeine -c csdms
-#deploy:
-#  provider: script
-#  skip_cleanup: true
-#  script: .ci/travis/deploy_to_anaconda.sh
-#  on:
-#    branch: master
+deploy:
+  provider: script
+  skip_cleanup: true
+  script: .ci/travis/deploy_to_anaconda.sh
+  on:
+    branch: master
