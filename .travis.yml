@@ -28,9 +28,10 @@ install:
 - conda install conda-build anaconda-client
 script:
  - cd conda-recipes
- - CONDA_FILES_TO_UPLOAD=$(conda build --output --python=$TRAVIS_PYTHON_VERSION --numpy=$NUMPY_VERSION $CONDA_RECIPES)
- - echo $CONDA_FILES_TO_UPLOAD
- - conda build $CONDA_RECIPES -c csdms && anaconda -t $ANACONDA_TOKEN upload --force --user csdms --channel $BUILD_STR $CONDA_FILES_TO_UPLOAD
+ - for r in $CONDA_RECIPES; do (conda build $r -c csdms || exit -1) && anaconda -t $ANACONDA_TOKEN upload --force --user csdms --channel $BUILD_STR $(conda build --output --python=$TRAVIS_PYTHON_VERSION --numpy=$NUMPY_VERSION $r); done
+# - CONDA_FILES_TO_UPLOAD=$(conda build --output --python=$TRAVIS_PYTHON_VERSION --numpy=$NUMPY_VERSION $CONDA_RECIPES)
+# - echo $CONDA_FILES_TO_UPLOAD
+# - conda build $CONDA_RECIPES -c csdms && anaconda -t $ANACONDA_TOKEN upload --force --user csdms --channel $BUILD_STR $CONDA_FILES_TO_UPLOAD
 #deploy:
 #  provider: script
 #  skip_cleanup: true
