@@ -21,11 +21,12 @@ env:
 #  - CONDA_RECIPES="topoflow"
 #  - CONDA_RECIPES="cem"
 #  - CONDA_RECIPES="hydrotrend"
-sudo: false
+# sudo: false
 install:
 - bash .ci/travis/install_python.sh
 - export PATH=$HOME/miniconda/bin:$PATH
 - conda install conda-build anaconda-client
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install gfortran; fi
 script:
  - cd conda-recipes
  - for r in $CONDA_RECIPES; do (conda build $r -c csdms > stdout.out || exit -1) && anaconda -t $ANACONDA_TOKEN upload --force --user csdms --channel $BUILD_STR $(conda build --output --python=$TRAVIS_PYTHON_VERSION --numpy=$NUMPY_VERSION $r); done 
