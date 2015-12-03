@@ -1,0 +1,6 @@
+package:
+  name: bmi-java
+  version: "0.1"
+
+source:
+  git_url: https://github.com/mdpiper/bmi-java
