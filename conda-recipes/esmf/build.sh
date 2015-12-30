@@ -22,5 +22,9 @@ export ESMF_COMPILER=gfortran
 
 export
 
+ln -s "$PREFIX/lib" "$PREFIX/lib64"
+
 make
 make install
+
+rm "$PREFIX"/lib64

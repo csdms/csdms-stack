@@ -24,4 +24,9 @@ $PREFIX/bin/bmi-babel-make _models.yaml
 if [ $(uname) == Darwin ]; then
   export LDFLAGS="-headerpad_max_install_names"
 fi
+
+ln -s "$PREFIX/lib" "$PREFIX/lib64"
+
 cd csdms && ./configure --prefix=$PREFIX --with-languages="python c" && make all && make install
+
+rm "$PREFIX"/lib64

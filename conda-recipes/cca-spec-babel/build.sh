@@ -12,8 +12,12 @@ else
   export PATH=$JAVA_HOME/bin:$PATH
 fi
 
+ln -s "$PREFIX/lib" "$PREFIX/lib64"
+
 ./configure --prefix=$PREFIX --disable-contrib \
   --with-babel-config=$BABEL_CONFIG --with-libxml2=$PREFIX
 
 make all
 make install
+
+rm "$PREFIX"/lib64

@@ -9,6 +9,10 @@ else
   export PATH=$JAVA_HOME/bin:$PATH
 fi
 
+ln -s "$PREFIX/lib" "$PREFIX/lib64"
+
 ./configure --prefix=$PREFIX --without-mpi --with-boost=$PREFIX/include
 make
 make install
+
+rm "$PREFIX"/lib64

@@ -10,6 +10,10 @@ fi
 
 export CPPFLAGS="-I$PREFIX/include"
 
+ln -s "$PREFIX/lib" "$PREFIX/lib64"
+
 ./configure --prefix=$PREFIX --disable-dependency-tracking --disable-dap-remote-tests --enable-static --enable-shared
 make all
 make install
+
+rm "$PREFIX"/lib64
