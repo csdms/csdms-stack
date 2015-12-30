@@ -2,9 +2,17 @@ package:
   name: chasm
   version: "1.4"
 
-build:
-  string: {{ environ.get('BUILD_STR', '') }}
-
 source:
   fn: chasm_1.4.RC3.tar.gz
   url: http://sourceforge.net/projects/chasm-interop/files/chasm_1.4.RC3.tar.gz
+
+requirements:
+  build:
+    - gcc
+    - libgcc
+  run:
+    - gcc
+    - libgcc
+
+build:
+  string: {{ environ.get('BUILD_STR', '') }}

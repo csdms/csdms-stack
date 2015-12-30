@@ -4,3 +4,6 @@ package:
 
 source:
   git_url: https://github.com/mdpiper/bmi-java
+
+build:
+  string: {{ environ.get('BUILD_STR', '') }}

@@ -18,3 +18,6 @@ requirements:
     - h5py
     - numpy
     - scipy
+
+build:
+  string: {{ environ.get('BUILD_STR', '') }}

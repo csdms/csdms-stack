@@ -8,3 +8,6 @@ source:
 
 about:
   home: 'https://www.gnu.org/software/libiconv/'
+
+build:
+  string: {{ environ.get('BUILD_STR', '') }}

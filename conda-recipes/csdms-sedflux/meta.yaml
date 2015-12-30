@@ -2,12 +2,6 @@ package:
   name: csdms-sedflux
   version: "2.1"
 
-build:
-  number: 1
-  rpaths:
-    - lib/
-    - lib/cca-spec-babel-0_8_6-babel-1.4.0
-
 requirements:
   build:
     - sedflux
@@ -15,3 +9,10 @@ requirements:
   run:
     - sedflux
     - bmi-babel
+
+build:
+  number: 1
+  rpaths:
+    - lib/
+    - lib/cca-spec-babel-0_8_6-babel-1.4.0
+  string: {{ environ.get('BUILD_STR', '') }}

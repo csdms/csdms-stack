@@ -8,17 +8,13 @@ source:
     - mac-inline.patch [osx]
     - override-java.patch [linux]
 
-build:
-  script_env:
-    - JAVA_HOME
-  string: {{ environ.get('BUILD_STR', '') }}
-
-
 requirements:
   build:
     - python
     - numpy
     - libxml2
+    - gcc
+    - libgcc
     - chasm
     - pkgconfig-command [osx]
 
@@ -26,5 +22,12 @@ requirements:
     - python
     - numpy
     - libxml2
+    - gcc
+    - libgcc
     - chasm
     - pkgconfig-command [osx]
+
+build:
+  script_env:
+    - JAVA_HOME
+  string: {{ environ.get('BUILD_STR', '') }}

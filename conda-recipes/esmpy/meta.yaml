@@ -20,3 +20,6 @@ requirements:
     - libnetcdf
     - netcdff
     - numpy
+
+build:
+  string: {{ environ.get('BUILD_STR', '') }}

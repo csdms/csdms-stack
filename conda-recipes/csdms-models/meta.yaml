@@ -12,3 +12,6 @@ requirements:
 
 about:
   summary: The complete CSDMS set of models.
+
+build:
+  string: {{ environ.get('BUILD_STR', '') }}
