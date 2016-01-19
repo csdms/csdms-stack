@@ -1,0 +1,14 @@
+package:
+  name: stack
+  version: "0.1"
+
+requirements:
+  run:
+    - csdms-models
+    - coupling
+
+about:
+  summary: The complete CSDMS software stack.
+
+build:
+  string: {{ environ.get('BUILD_STR', '') }}
