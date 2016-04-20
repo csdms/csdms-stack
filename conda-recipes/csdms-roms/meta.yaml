@@ -1,0 +1,18 @@
+package:
+  name: csdms-roms
+  version: "0.1"
+
+requirements:
+  build:
+    - roms
+    - bmi-babel
+  run:
+    - roms
+    - bmi-babel
+
+build:
+  number: 0
+  rpaths:
+    - lib/
+    - lib/cca-spec-babel-0_8_6-babel-1.4.0
+  string: {{ environ.get('BUILD_STR', '') }}
