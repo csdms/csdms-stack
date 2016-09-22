@@ -8,11 +8,11 @@ source:
 
 requirements:
   build:
-    - gcc
-    - libgcc
-  run:
-    - gcc
-    - libgcc
+    - gcc [linux]
+    - libgcc [linux]
+#   run:
+#     - gcc
+#     - libgcc
 
 build:
-  string: {{ environ.get('BUILD_STR', '') }}
+  string: {{ environ.get('BUILD_STR', '') + environ.get('COMPILER', '') }}

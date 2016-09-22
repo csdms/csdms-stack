@@ -13,21 +13,21 @@ requirements:
     - python
     - numpy
     - libxml2
-    - gcc
-    - libgcc
+    - gcc [linux]
+    - libgcc [linux]
     - chasm
-    - pkgconfig-command [osx]
+    - pkgconfig
 
   run:
     - python
     - numpy
     - libxml2
-    - gcc
-    - libgcc
+    - gcc [linux]
+    - libgcc [linux]
     - chasm
-    - pkgconfig-command [osx]
+    - pkgconfig
 
 build:
   script_env:
     - JAVA_HOME
-  string: {{ environ.get('BUILD_STR', '') }}
+  string: {{ environ.get('BUILD_STR', '') + environ.get('COMPILER', '') }}

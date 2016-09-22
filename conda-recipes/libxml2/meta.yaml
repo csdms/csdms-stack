@@ -10,12 +10,12 @@ source:
 requirements:
   build:
     - zlib
-    - gcc
-    - libgcc
+    - gcc [linux]
+    - libgcc [linux]
   run:
     - zlib
-    - gcc
-    - libgcc
+    - gcc [linux]
+    - libgcc [linux]
 
 about:
   home: http://xmlsoft.org/
@@ -23,5 +23,5 @@ about:
   summary: The XML C parser and toolkit of Gnome
 
 build:
-  number: 1
-  string: {{ environ.get('BUILD_STR', '') }}
+  number: 2
+  string: {{ environ.get('BUILD_STR', '') + environ.get('COMPILER', '') }}
