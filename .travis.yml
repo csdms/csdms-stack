@@ -23,9 +23,8 @@ env:
 #  - CONDA_RECIPES="hydrotrend"
 sudo: false
 install:
-- bash .ci/travis/install_python.sh
-- export PATH=$HOME/miniconda/bin:$PATH
-- conda install conda-build anaconda-client
+- bash .ci/travis/install_python.sh $HOME/miniconda
+- export PATH="$HOME/miniconda/bin:$PATH"
 script:
  - cd conda-recipes
  - CONDA_FILES_TO_UPLOAD=$(conda build --output --python=$TRAVIS_PYTHON_VERSION --numpy=$NUMPY_VERSION $CONDA_RECIPES)
