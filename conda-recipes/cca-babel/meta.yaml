@@ -8,23 +8,26 @@ source:
     - mac-inline.patch [osx]
     - override-java.patch [linux]
 
-build:
-  script_env:
-    - JAVA_HOME
-  string: {{ environ.get('BUILD_STR', '') }}
-
-
 requirements:
   build:
     - python
     - numpy
     - libxml2
+    - gcc [linux]
+    - libgcc [linux]
     - chasm
-    - pkgconfig-command [osx]
+    - pkgconfig
 
   run:
     - python
     - numpy
     - libxml2
+    - gcc [linux]
+    - libgcc [linux]
     - chasm
-    - pkgconfig-command [osx]
+    - pkgconfig
+
+build:
+  script_env:
+    - JAVA_HOME
+  string: {{ environ.get('BUILD_STR', '') + environ.get('COMPILER', '') }}

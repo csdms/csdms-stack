@@ -6,9 +6,6 @@ source:
   git_url: https://github.com/mcflugen/avulsion-bmi
   git_rev: add-bmi-metadata
 
-build:
-  number: 3
-
 requirements:
   build:
     - python
@@ -16,3 +13,7 @@ requirements:
   run:
     - python
     - numpy
+
+build:
+  number: 3
+  string: {{ environ.get('BUILD_STR', '') }}

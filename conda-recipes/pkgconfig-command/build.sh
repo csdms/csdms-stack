@@ -8,6 +8,9 @@ if [[ -z $CC ]]; then
   export CXX=$(which g++)
 fi
 
+export GLIB_CFLAGS="-I$PREFIX/include/glib-2.0 -I$PREFIX/lib/glib-2.0/include"
+export GLIB_LIBS="-L$PREFIX/lib -lglib-2.0 -lintl"
+
 ./configure --prefix="${PREFIX}" \
   --disable-debug \
   --disable-host-tool \

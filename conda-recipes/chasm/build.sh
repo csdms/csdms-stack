@@ -9,6 +9,10 @@ if [[ -z $CC ]]; then
 fi
 FC=$(which gfortran)
 
+# if [ $(uname) == Darwin ]; then
+#   export LDFLAGS="-headerpad_max_install_names"
+# fi
+
 ./configure --prefix=$PREFIX --with-F90=$FC --with-F90-vendor=GNU
 
 make all

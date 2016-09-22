@@ -11,3 +11,6 @@ requirements:
     - libnetcdf
   run:
     - libnetcdf
+
+build:
+  string: {{ environ.get('BUILD_STR', '') }}

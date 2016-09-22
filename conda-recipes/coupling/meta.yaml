@@ -6,9 +6,6 @@ source:
   git_url: https://github.com/csdms/coupling
   git_rev: mcflugen/fix-for-new-bmi
 
-build:
-  number: 2
-
 requirements:
   build:
     - python
@@ -32,3 +29,7 @@ requirements:
 
 about:
   summary: Services for coupling CSDMS model components.
+
+build:
+  number: 2
+  string: {{ environ.get('BUILD_STR', '') }}

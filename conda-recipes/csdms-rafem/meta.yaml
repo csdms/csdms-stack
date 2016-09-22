@@ -2,12 +2,6 @@ package:
   name: csdms-rafem
   version: "0.1"
 
-build:
-  number: 3
-  rpaths:
-    - lib/
-    - lib/cca-spec-babel-0_8_6-babel-1.4.0
-
 requirements:
   build:
     - rafem
@@ -15,3 +9,10 @@ requirements:
   run:
     - rafem
     - bmi-babel
+
+build:
+  number: 3
+  rpaths:
+    - lib/
+    - lib/cca-spec-babel-0_8_6-babel-1.4.0
+  string: {{ environ.get('BUILD_STR', '') }}

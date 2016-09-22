@@ -6,9 +6,6 @@ source:
   git_url: https://github.com/csdms/cem-old
   git_rev: mcflugen/add-function-pointers
 
-build:
-  number: 2
-
 requirements:
   build:
     - cmake
@@ -17,3 +14,7 @@ requirements:
 
   run:
     - glib [osx]
+
+build:
+  number: 2
+  string: {{ environ.get('BUILD_STR', '') }}

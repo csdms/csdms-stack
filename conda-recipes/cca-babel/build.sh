@@ -12,8 +12,9 @@ if [ $(uname) == Darwin ]; then
   #export JAVAPREFIX=$(/usr/libexec/java_home)
   export JAVAPREFIX=/usr
 else
-  JAVAPREFIX="${JAVA_HOME:-/usr/java/default}"
+  export JAVAPREFIX="${JAVA_HOME:-/usr/java/default}"
   export JAVAPREFIX="/usr/java/default"
+  #export JAVAPREFIX=/usr
 fi
 export JAVA=$JAVAPREFIX/bin/java
 
@@ -25,6 +26,10 @@ export F03=$(which gfortran)
 export PYTHON=$PREFIX/bin/python
 export PATH=$JAVAPREFIX/bin:$PATH
 
-./configure --prefix=$PREFIX --disable-documentation --disable-java
+ln -s "$PREFIX/lib" "$PREFIX/lib64"
+
+./configure --prefix=$PREFIX --disable-documentation
 make all -j4
 make install
+
+rm "$PREFIX"/lib64

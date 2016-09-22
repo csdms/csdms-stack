@@ -9,3 +9,6 @@ source:
 requirements:
   build:
     - cmake
+
+build:
+  string: {{ environ.get('BUILD_STR', '') }}

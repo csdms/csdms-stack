@@ -1,17 +1,17 @@
 package:
-  name: csdms-sedflux
-  version: "2.1"
+  name: csdms-roms
+  version: "0.1"
 
 requirements:
   build:
-    - sedflux
+    - roms
     - bmi-babel
   run:
-    - sedflux
+    - roms
     - bmi-babel
 
 build:
-  number: 1
+  number: 0
   rpaths:
     - lib/
     - lib/cca-spec-babel-0_8_6-babel-1.4.0

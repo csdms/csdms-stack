@@ -4,18 +4,19 @@ package:
 
 source:
   git_url: https://github.com/csdms/cca-spec-babel
-  url: http://www.cca-forum.org/download/cca-tools/cca-tools-latest/cca-spec-babel-0.8.6.tar.gz
-
-build:
-  string: {{ environ.get('BUILD_STR', '') }}
 
 requirements:
   build:
     - python
     - cca-babel
     - libxml2
+    - libiconv [osx]
 
   run:
     - python
     - cca-babel
     - libxml2
+    - libiconv [osx]
+
+build:
+  string: {{ environ.get('BUILD_STR', '') }}

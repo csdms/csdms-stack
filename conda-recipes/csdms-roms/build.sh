@@ -1,6 +1,6 @@
 #! /bin/bash
 
-REPOSITORY="https://github.com/mdpiper/topoflow"
+REPOSITORY="https://github.com/mcflugen/roms-lite"
 
 JAVA_HOME=$(babel-config --query-var=JAVAPREFIX)
 export CC=$(babel-config --query-var=CC)

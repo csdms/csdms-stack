@@ -24,3 +24,5 @@ about:
   license: LGPL
   summary: "GNOME core building blocks for C libraries and applications"
 
+build:
+  string: {{ environ.get('BUILD_STR', '') }}

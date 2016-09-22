@@ -33,3 +33,6 @@ requirements:
     - cython
     - six
     - setuptools
+
+build:
+  string: {{ environ.get('BUILD_STR', '') }}

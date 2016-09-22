@@ -2,12 +2,6 @@ package:
   name: csdms-topoflow
   version: "3.4"
 
-build:
-  number: 1
-  rpaths:
-    - lib/
-    - lib/cca-spec-babel-0_8_6-babel-1.4.0
-
 requirements:
   build:
     - topoflow
@@ -15,3 +9,10 @@ requirements:
   run:
     - topoflow
     - bmi-babel
+
+build:
+  number: 1
+  rpaths:
+    - lib/
+    - lib/cca-spec-babel-0_8_6-babel-1.4.0
+  string: {{ environ.get('BUILD_STR', '') }}

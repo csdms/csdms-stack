@@ -11,19 +11,19 @@ RECIPES=" \
   cca-spec-babel \
   ccaffeine \
   cca-bocca \
-  bmi-babel \
-  csdms-components \
-  esmf \
-  esmpy \
-  coupling \
-  wmt-exe \
-  csdms-stack \
 "
 
-#RECIPES="topoflow csdms-topoflow"
-RECIPES=""
+RECIPES=" \
+  cca-bocca \
+"
 
-export PATH=/usr/bin:/bin:/usr/sbin:/etc:/usr/lib:/usr/local/gfortran/bin
+COMPILER_PREFIX=/usr/local/gfortran
+GCC_VERSION=$($COMPILER_PREFIX/bin/gcc -dumpversion)
+GCC_MAJOR=$(echo $GCC_VERSION | cut -f 1 -d .)
+GCC_MINOR=$(echo $GCC_VERSION | cut -f 2 -d .)
+
+export COMPILER=gcc${GCC_MAJOR}${GCC_MINOR}
+export PATH=/usr/bin:/bin:/usr/sbin:/etc:/usr/lib:$COMPILER_PREFIX/bin
 
 GIT=/usr/bin/git
 CURL=/usr/bin/curl
@@ -59,8 +59,8 @@ fi
 
 cd conda-recipes
 for recipe in $RECIPES; do
-  #conda build $recipe
-  (conda build -c csdms $recipe && anaconda upload --force --channel nightly --channel main --user csdms $(conda build $recipe --output)) || exit -1
+  conda build $recipe
+  # (conda build -c csdms $recipe && anaconda upload --force --channel nightly --channel main --user csdms $(conda build $recipe --output)) || exit -1
   wait
 done
 

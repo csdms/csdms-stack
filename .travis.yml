@@ -21,15 +21,17 @@ env:
 #  - CONDA_RECIPES="topoflow"
 #  - CONDA_RECIPES="cem"
 #  - CONDA_RECIPES="hydrotrend"
-sudo: false
+# sudo: false
 install:
 - bash .ci/travis/install_python.sh $HOME/miniconda
 - export PATH="$HOME/miniconda/bin:$PATH"
+- if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install gfortran; fi
 script:
  - cd conda-recipes
- - CONDA_FILES_TO_UPLOAD=$(conda build --output --python=$TRAVIS_PYTHON_VERSION --numpy=$NUMPY_VERSION $CONDA_RECIPES)
- - echo $CONDA_FILES_TO_UPLOAD
- - conda build $CONDA_RECIPES -c csdms && anaconda -t $ANACONDA_TOKEN upload --force --user csdms --channel $BUILD_STR $CONDA_FILES_TO_UPLOAD
+ - for r in $CONDA_RECIPES; do (conda build $r -c csdms > stdout.out || exit -1) && anaconda -t $ANACONDA_TOKEN upload --force --user csdms --channel $BUILD_STR $(conda build --output --python=$TRAVIS_PYTHON_VERSION --numpy=$NUMPY_VERSION $r); done 
+# - CONDA_FILES_TO_UPLOAD=$(conda build --output --python=$TRAVIS_PYTHON_VERSION --numpy=$NUMPY_VERSION $CONDA_RECIPES)
+# - echo $CONDA_FILES_TO_UPLOAD
+# - conda build $CONDA_RECIPES -c csdms && anaconda -t $ANACONDA_TOKEN upload --force --user csdms --channel $BUILD_STR $CONDA_FILES_TO_UPLOAD
 #deploy:
 #  provider: script
 #  skip_cleanup: true

@@ -24,7 +24,12 @@ $PREFIX/bin/bmi-babel-make _models.yaml
 if [ $(uname) == Darwin ]; then
   export LDFLAGS="-headerpad_max_install_names"
 fi
+
+ln -s "$PREFIX/lib" "$PREFIX/lib64"
+
 cd csdms && ./configure --prefix=$PREFIX --with-languages="python c" && make all && make install
+
+rm "$PREFIX"/lib64
 
 mkdir -p $PREFIX/share/cca
 mkdir -p $PREFIX/lib
@@ -35,7 +40,7 @@ NEW=$(echo "/opt/anaconda1anaconda2anaconda3" | sed -e 's/[\/&]/\\&/g')
 if [ `uname` == Darwin ]; then
   SED_OPTS="-i bak"
 else
-  SED_OPTS="--inplace=bak"
+  SED_OPTS="--in-place=bak"
 fi
 
 for f in install/share/cca/*.cca; do
