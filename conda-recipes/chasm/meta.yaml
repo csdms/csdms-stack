@@ -15,4 +15,4 @@ requirements:
 #     - libgcc
 
 build:
-  string: {{ environ.get('BUILD_STR', '') + environ.get('COMPILER', '') }}
+  string: {{ environ.get('BUILD_STR', '') }}
