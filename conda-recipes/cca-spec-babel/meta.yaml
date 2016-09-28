@@ -8,13 +8,13 @@ source:
 requirements:
   build:
     - python
-    - cca-babel
+    - cca-babel 1.4.0 {{ environ.get('COMPILER', '') }}
     - libxml2
     - libiconv [osx]
 
   run:
     - python
-    - cca-babel
+    - cca-babel 1.4.0 {{ environ.get('COMPILER', '') }}
     - libxml2
     - libiconv [osx]
 
