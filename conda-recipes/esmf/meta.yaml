@@ -10,13 +10,13 @@ requirements:
   build:
     - libnetcdf
     - netcdff
-    - openmpi
+    - openmpi [osx]
     - mpich2
 
   run:
     - libnetcdf
     - netcdff
-    - openmpi
+    - openmpi [osx]
     - mpich2
 
 build:
