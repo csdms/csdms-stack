@@ -10,10 +10,17 @@ requirements:
   build:
     - libnetcdf
     - netcdff
+    - openmpi
+    - mpich2
 
   run:
     - libnetcdf
     - netcdff
+    - openmpi
+    - mpich2
 
 build:
   string: {{ environ.get('BUILD_STR', '') }}
+  rpaths:
+    - lib/
+    - lib64/
