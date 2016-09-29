@@ -16,7 +16,7 @@ env:
   - CONDA_RECIPES="chasm"
   - CONDA_RECIPES="boost-headers"
   - CONDA_RECIPES="libffi gettext glib"
-  - CONDA_RECIPES="netcdff esmf esmpy"
+  - CONDA_RECIPES="netcdff esmf"
 #  - CONDA_RECIPES="libxml2"
 #  - CONDA_RECIPES="sedflux"
 #  - CONDA_RECIPES="topoflow"
@@ -30,7 +30,10 @@ install:
 - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then sudo apt-get install gfortran; fi
 script:
  - cd conda-recipes
- - for r in $CONDA_RECIPES; do (conda build $r -c csdms > stdout.out || exit -1) && anaconda -t $ANACONDA_TOKEN upload --force --user csdms --channel $BUILD_STR $(conda build --output --python=$TRAVIS_PYTHON_VERSION --numpy=$NUMPY_VERSION $r); done 
+ - for r in $CONDA_RECIPES; do
+     echo "Building recipe, $r";
+     (conda build $r -c csdms > stdout.out || exit -1) && anaconda -t $ANACONDA_TOKEN upload --force --user csdms --channel $BUILD_STR $(conda build --output --python=$TRAVIS_PYTHON_VERSION --numpy=$NUMPY_VERSION $r);
+   done
 # - CONDA_FILES_TO_UPLOAD=$(conda build --output --python=$TRAVIS_PYTHON_VERSION --numpy=$NUMPY_VERSION $CONDA_RECIPES)
 # - echo $CONDA_FILES_TO_UPLOAD
 # - conda build $CONDA_RECIPES -c csdms && anaconda -t $ANACONDA_TOKEN upload --force --user csdms --channel $BUILD_STR $CONDA_FILES_TO_UPLOAD
