@@ -13,8 +13,8 @@ requirements:
     - python
     - numpy
     - libxml2
-    - gcc [linux]
-    - libgcc [linux]
+    - gcc
+    - libgcc
     - chasm
     - pkgconfig
 
@@ -22,8 +22,8 @@ requirements:
     - python
     - numpy
     - libxml2
-    - gcc [linux]
-    - libgcc [linux]
+    - gcc
+    - libgcc
     - chasm
     - pkgconfig
 

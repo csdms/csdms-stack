@@ -8,8 +8,10 @@ source:
 
 requirements:
   build:
+    - gcc
     - libnetcdf
   run:
+    - libgcc
     - libnetcdf
 
 build:

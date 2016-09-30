@@ -1,7 +1,9 @@
 if [[ -z $CC ]]; then
   if [ `uname` == Darwin ]; then
-    export CC=$(which clang)
-    export CXX=$(which clang++)
+    export CC=$(which gcc)
+    export CXX=$(which g++)
+    # export CC=$(which clang)
+    # export CXX=$(which clang++)
   else
     export CC=$(which gcc)
     export CXX=$(which g++)
