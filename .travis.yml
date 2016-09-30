@@ -12,7 +12,8 @@ env:
   matrix:
 #  - CONDA_RECIPES="runtime"
 #  - CONDA_RECIPES="development"
-  - CONDA_RECIPES="chasm cca-babel cca-spec-babel ccaffeine cca-bocca"
+#  - CONDA_RECIPES="chasm cca-babel cca-spec-babel ccaffeine cca-bocca"
+  - CONDA_RECIPES="cca-babel"
 #  - CONDA_RECIPES="chasm"
 #  - CONDA_RECIPES="boost-headers"
 #  - CONDA_RECIPES="libffi gettext glib"
