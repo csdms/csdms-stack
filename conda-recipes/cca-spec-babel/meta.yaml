@@ -8,15 +8,17 @@ source:
 requirements:
   build:
     - python
+    # - cca-babel 1.4.0 {{ environ.get('COMPILER', '') }}
     - cca-babel
     - libxml2
-    - libiconv [osx]
+    # - libiconv [osx]
 
   run:
     - python
+    # - cca-babel 1.4.0 {{ environ.get('COMPILER', '') }}
     - cca-babel
     - libxml2
-    - libiconv [osx]
+    # - libiconv [osx]
 
 build:
   string: {{ environ.get('BUILD_STR', '') }}

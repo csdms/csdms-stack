@@ -10,5 +10,5 @@ if [[ -z $CC ]]; then
 fi
 
 ./configure $EXTRA_ARGS --prefix=$PREFIX
-make
+make -j$CPU_COUNT
 make install

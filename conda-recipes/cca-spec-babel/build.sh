@@ -17,7 +17,7 @@ ln -s "$PREFIX/lib" "$PREFIX/lib64"
 ./configure --prefix=$PREFIX --disable-contrib \
   --with-babel-config=$BABEL_CONFIG --with-libxml2=$PREFIX
 
-make all
+make all -j$CPU_COUNT
 make install
 
 rm "$PREFIX"/lib64

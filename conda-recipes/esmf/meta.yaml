@@ -4,16 +4,23 @@ package:
 
 source:
   fn: esmf_6_3_0rp1_src.tar.gz
-  url: http://sourceforge.net/projects/esmf/files/latest/download?source=directory
+  url: https://sourceforge.net/projects/esmf/files/ESMF_6_3_0r/ESMF_6_3_0rp1/esmf_6_3_0rp1_src.tar.gz/download
 
 requirements:
   build:
     - libnetcdf
     - netcdff
+    - openmpi [osx]
+    - mpich2
 
   run:
     - libnetcdf
     - netcdff
+    - openmpi [osx]
+    - mpich2
 
 build:
   string: {{ environ.get('BUILD_STR', '') }}
+  rpaths:
+    - lib/
+    - lib64/
