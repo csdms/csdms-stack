@@ -17,6 +17,8 @@ requirements:
     - libgcc
     - libgfortran
     - chasm
+    - libparsifal
+    - libtool
     - pkgconfig
 
   run:
@@ -27,6 +29,8 @@ requirements:
     - libgcc
     - libgfortran
     - chasm
+    - libparsifal
+    - libtool
     - pkgconfig
 
 build:
