@@ -14,7 +14,7 @@ env:
 #  - CONDA_RECIPES="runtime"
 #  - CONDA_RECIPES="development"
 #  - CONDA_RECIPES="cca-spec-babel ccaffeine cca-bocca"
-  - CONDA_RECIPES="cca-spec-babel"
+  - CONDA_RECIPES="ccaffeine"
 #  - CONDA_RECIPES="cca-babel"
 #  - CONDA_RECIPES="libparsifal"
 #  - CONDA_RECIPES="chasm"
