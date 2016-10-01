@@ -15,8 +15,8 @@ requirements:
     - cca-spec-babel
     - cca-babel
     # - cca-babel 1.4.0 {{ environ.get('COMPILER', '') }}
-    # - boost-headers
-    - boost
+    - boost-headers
+    # - boost
     - readline
     - ncurses
 
@@ -27,7 +27,7 @@ requirements:
     - cca-babel
     # - cca-babel 1.4.0 {{ environ.get('COMPILER', '') }}
     # - boost-headers
-    - boost
+    # - boost
     - readline
     - ncurses
 
