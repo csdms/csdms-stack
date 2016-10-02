@@ -14,9 +14,7 @@ requirements:
     - libxml2
     - cca-spec-babel
     - cca-babel
-    # - cca-babel 1.4.0 {{ environ.get('COMPILER', '') }}
-    - boost-headers
-    # - boost
+    - boost-headers 1.34
     - readline
     - ncurses
 
@@ -25,9 +23,6 @@ requirements:
     - libxml2
     - cca-spec-babel
     - cca-babel
-    # - cca-babel 1.4.0 {{ environ.get('COMPILER', '') }}
-    # - boost-headers
-    # - boost
     - readline
     - ncurses
 
