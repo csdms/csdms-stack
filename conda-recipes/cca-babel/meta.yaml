@@ -6,7 +6,7 @@ source:
   git_url: https://github.com/csdms/cca-babel
   patches:
     - mac-inline.patch [osx]
-    - override-java.patch [linux]
+    - override-java.patch [unix]
 
 requirements:
   build:
